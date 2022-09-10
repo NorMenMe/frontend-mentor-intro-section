@@ -1,2 +1,140 @@
-// This is where you can import other stylesheets or write your scss code
-@import "../../node_modules/bootstrap/scss/bootstrap";
+body {
+  font-family: 'Epilogue', sans-serif;
+  margin: 0;
+}
+
+.intro__header {
+  padding: 1.3rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* navigation */
+.intro__navigation,
+.intro__navigation span {
+  cursor: pointer;
+}
+
+.intro__navigation-list {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.intro__navigation-item {
+  position: relative;
+  padding: 0; 
+  margin: 0;
+  list-style-type: none;
+}
+
+.intro__navigation-button {
+  border: none;
+  background-color: transparent;
+  margin-right: .5rem;
+
+	span {
+		font-size: 18px;
+		color: #696969;	
+	}
+}
+
+.intro__navigation__arrow-up {
+  position: absolute;
+  top: 8px;
+  left: 95px;
+  visibility: hidden;
+
+	.intro__navigation-item:hover & {
+		visibility: visible;
+	}
+}
+
+.intro__navigation-item:hover .intro__navigation__arrow-down {
+  visibility: hidden;
+}
+
+.intro__navigation-dropdown {
+  visibility: hidden;
+  display: none;
+  transition: all 0.5s ease;
+
+	.intro__navigation-item:hover & {
+		display: block;
+		visibility: visible;
+	}
+}
+
+.intro__article {
+  text-align: center;
+  padding: 0 1rem 0 1rem;
+}
+
+.intro__headline {
+  font-size: 36px;
+  margin: 3rem 0 0 0;
+}
+
+.intro__copy {
+  color: #696969;
+  line-height: 1.6;
+  margin: 1rem 0 0 0;
+}
+
+.intro__button {
+  font-size: 16px;
+  display: block;
+  text-decoration: none;
+  margin-top: 2.5rem;
+
+	span {
+		background-color: hsl(0, 0%, 8%);
+		color: hsl(0, 0%, 98%);
+		padding: 1rem 1.5rem;
+		border-radius: 15px;
+	}
+}
+
+.intro__list--footer {
+  margin-top: 4rem;
+  padding: 0 1rem;
+}
+
+/* footer logos */
+
+.intro__list--footer {
+
+	li {
+		display: flex;
+    justify-content: space-evenly;
+	}
+
+	li:first-child {
+		width: 82px;
+		height: 15px;
+	}
+
+	li:nth-child(2) {
+		width: 50px;
+		transform: translateY(-10px);
+	}
+
+	li:nth-child(3), 
+	li:nth-child(4) {
+		width: 60px;
+		height: 15px;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
+}
