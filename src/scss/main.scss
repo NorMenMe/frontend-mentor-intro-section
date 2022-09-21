@@ -6,7 +6,6 @@ body {
 .intro__header {
   display: flex;
   justify-content: space-between;
-  padding: 1.5rem;
 
   @media ( min-width: 1065px ) {
     padding: unset;
@@ -32,13 +31,12 @@ body {
 }
 
 .intro__navigation {
-  display: grid;
+  display: none;
   grid-template-columns: 1fr 1fr 1fr;
   height: 100vh;
-  max-width: unset;
-  max-height: 0;
-  transition: max-height .2s ease-out;
-  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
 
   &::before {
     grid-column: 1 / 2;
@@ -46,16 +44,18 @@ body {
     background-color: rgba($color: #000000, $alpha: .5)
   }
 
-  .intro__header-menu-button:checked & {
-    max-height: 240px;
-  }
+  .intro__header-menu-button:checked ~ & {
+    display: grid;
+  }  
 }
+
 
 .intro__navigation-list {
   grid-column: 2 / 4;
   display: flex;
   flex-direction: column;
   padding: 0 1.5rem;
+  background-color: white;
 }
 
 .intro__navigation-item {
@@ -188,6 +188,7 @@ body {
 
 .intro__header-menu-icon {
   display: flex;
+  z-index: 1;
   justify-content: flex-end;
   align-items: baseline;
   padding: 30px 20px 30px 0;
