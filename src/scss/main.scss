@@ -49,13 +49,13 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height .4s ease;
-
+  
   &::before {
     grid-column: 1 / 2;
     content: '';
     background-color: rgba($color: #000000, $alpha: .5)
   }
-
+  
   .intro__header-menu-button:checked ~ & {
     max-height: 100vh;
   }  
@@ -73,23 +73,37 @@ body {
 
 .intro__navigation-item {
   position: relative;
-
-  &:not(:last-child) {
-    margin-top: 1.5rem;
-  }
+  margin-top: 1.5rem;
 
   > * {
     color: #696969;	
     text-decoration: none;
   }
 
+  &:first-child {
+    margin-top: 5rem;
+  }
+
   &:nth-child(-n+2) {
 
+    &::before,
     &::after {
-      content: url('../images/icon-arrow-up.svg');
       position: absolute;
       top: 0;
       left: 95px;
+    }
+
+    &::before {
+      content: url('../images/icon-arrow-down.svg');
+      visibility: visible;
+    }
+
+    &:hover::before {
+      visibility: hidden;
+    }
+
+    &::after {
+      content: url('../images/icon-arrow-up.svg');
       visibility: hidden;
     }
 
@@ -97,20 +111,11 @@ body {
       visibility: visible;
     }
 
-    &::before {
-      content: url('../images/icon-arrow-down.svg');
-      position: absolute;
-      top: 0;
-      left: 95px;
-      visibility: visible;
-    }
-
-    &:hover::before {
-      visibility: hidden;
-    }
+    
   }
 
   &:nth-last-child(-n+2) {
+
     button {
       display: block;
       width: 100%;
@@ -122,36 +127,32 @@ body {
   }
 
   &:last-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
     border: 2px solid #696969;
     border-radius: 20px;
   }
 }
 
-
-
-.intro__navigation__arrow-up {
-  position: absolute;
-  top: 8px;
-  left: 95px;
-  visibility: hidden;
-
-	.intro__navigation-item:hover & {
-		visibility: visible;
-	}
-}
-
-.intro__navigation-item:hover .intro__navigation__arrow-down {
-  visibility: hidden;
-}
-
 .intro__navigation-dropdown {
-  visibility: hidden;
   display: none;
   transition: all 0.5s ease;
+  list-style-type: none;
+  
+  li {
+    margin-top: 1rem;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #696969;
+    padding-left: 1rem;
+  }
 
 	.intro__navigation-item:hover & {
 		display: block;
-		visibility: visible;
 	}
 }
 
@@ -206,7 +207,7 @@ body {
   span {
     background: #333;
     display: block;
-    width: 18px;
+    width: 30px;
     height: 2px;
     position: relative;
 
@@ -216,7 +217,7 @@ body {
   }
 
   span::before {
-    top: 5px;
+    top: 7px;
 
   .intro__header-menu-button:checked ~ & {
     transform: rotate(-45deg);
@@ -224,7 +225,7 @@ body {
   }
 
   span::after {
-    top: -5px;
+    top: -7px;
 
     .intro__header-menu-button:checked ~ & {
       transform: rotate(45deg);
