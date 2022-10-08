@@ -6,16 +6,8 @@ body {
 .intro__header {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 0;
-
-  img {
-    padding-left: 1rem;
-  }
-
-  label {
-    padding-right: 1rem;
-  }
-
+  padding: 2rem 1rem;
+  
   @media ( min-width: 1065px ) {
     padding: unset;
   }
@@ -80,6 +72,11 @@ body {
     text-decoration: none;
   }
 
+  > *:hover {
+    color: #919191;	
+  }
+
+
   &:first-child {
     margin-top: 5rem;
   }
@@ -140,6 +137,8 @@ body {
   display: none;
   transition: all 0.5s ease;
   list-style-type: none;
+  margin-top: 2rem;
+  padding-left: 1rem;
   
   li {
     margin-top: 1rem;
@@ -149,6 +148,10 @@ body {
     text-decoration: none;
     color: #696969;
     padding-left: 1rem;
+  }
+
+  .intro__navigation-item:nth-child(2) & {
+    padding-left: 0;
   }
 
 	.intro__navigation-item:hover & {
