@@ -6,8 +6,7 @@ body {
 .intro__header {
   display: flex;
   justify-content: space-between;
-  padding: 2rem 1rem;
-  
+
   @media ( min-width: 1065px ) {
     padding: unset;
   }
@@ -51,6 +50,19 @@ body {
   .intro__header-menu-button:checked ~ & {
     max-height: 100vh;
   }  
+
+  @media ( min-width: 1065px ) {
+    display: flex;
+    flex-flow: row;
+    position: static;
+    max-height: unset;
+    height: unset;
+    grid-template-columns: unset;
+    top: unset;
+    overflow: unset;
+    transition: unset;
+  }
+
 }
 
 .intro__navigation-list {
@@ -61,11 +73,21 @@ body {
   margin: 0;
   list-style-type: none;
   background-color: white;
+
+  @media ( min-width: 1065px ) {
+    flex-direction: row;  
+    align-items: center;
+  }
+
 }
 
 .intro__navigation-item {
   position: relative;
   margin-top: 1.5rem;
+
+  @media ( min-width: 1065px ) {
+    margin-top: unset;
+  }  
 
   > * {
     color: #696969;	
@@ -79,6 +101,10 @@ body {
 
   &:first-child {
     margin-top: 5rem;
+
+    @media ( min-width: 1065px ) {
+      margin-top: unset;
+    }  
   }
 
   &:nth-child(-n+2) {
@@ -120,16 +146,17 @@ body {
       border: none;
       padding: 1rem;
       font-size: 16px;
-    }
-  }
 
-  &:last-child {
-    margin-top: 0;
+      @media ( min-width: 1065px ) {
+        padding: unset;
+      } 
+    }
   }
 
   &:last-child {
     border: 2px solid #696969;
     border-radius: 20px;
+    margin-top: 0;
   }
 }
 
