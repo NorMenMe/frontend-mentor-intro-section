@@ -14,40 +14,40 @@
   <body>
     <header class="intro__header" aria-label="navigation-intro">
       <img src="images/logo.svg" alt="logo of the page">
+      <input type="checkbox" class="intro__header-menu-button" id="intro__header-menu-button">
+      <label class="intro__header-menu-icon" for="intro__header-menu-button">
+        <span></span>
+      </label>
       <nav class="intro__navigation">
         <ul class="intro__navigation-list">
           <li class="intro__navigation-item">
-            <button class="intro__navigation-button">
+            <a href="#" class="intro__navigation-button">
               <span>Features</span>
-            </button>
-            <svg class="intro__navigation__arrow-down" width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4"/>
-            </svg>
-            <svg class="intro__navigation__arrow-up" width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 5 4-4 4 4"/>
-            </svg>
+            </a>
             <ul class="intro__navigation-dropdown">
               <li class="intro__navigation-dropdown-item">
-                <svg width="14" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M14 3v12a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h1V1a1 1 0 1 1 2 0v1h2V1a1 1 0 1 1 2 0v1h2V1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 1 1Zm-2 3H2v1h10V6Zm0 3H2v1h10V9Zm0 3H2v1h10v-1Z" fill="#726CEE"/>
+                <svg viewBox="0 0 14 16" width="17px" height="19px" xmlns="http://www.w3.org/2000/svg"><path d="M14 3v12a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h1V1a1 1 0 1 1 2 0v1h2V1a1 1 0 1 1 2 0v1h2V1a1 1 0 0 1 2 0v1h1a1 1 0 0 1 1 1Zm-2 3H2v1h10V6Zm0 3H2v1h10V9Zm0 3H2v1h10v-1Z" fill="#726CEE"/>
                 </svg>
                 <a href="#">
                   <span>Todo List</span>
                 </a>
               </li>
               <li class="intro__navigation-dropdown-item">
-                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M12.667 8.667h-4v4h4v-4ZM11.334 0v1.333H4.667V0h-2v1.333h-1C.75 1.333 0 2.083 0 3v11.333C0 15.25.75 16 1.667 16h12.667C15.25 16 16 15.25 16 14.333V3c0-.917-.75-1.667-1.666-1.667h-1V0h-2Zm3 14.333H1.667V5.5h12.667v8.833Z" fill="#4BB1DA"/>
+                <svg viewBox="0 0 16 16" width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"><path d="M12.667 8.667h-4v4h4v-4ZM11.334 0v1.333H4.667V0h-2v1.333h-1C.75 1.333 0 2.083 0 3v11.333C0 15.25.75 16 1.667 16h12.667C15.25 16 16 15.25 16 14.333V3c0-.917-.75-1.667-1.666-1.667h-1V0h-2Zm3 14.333H1.667V5.5h12.667v8.833Z" fill="#4BB1DA"/>
                 </svg>
                 <a href="#">
                   <span>Calendar</span>
                 </a>
               </li>
               <li class="intro__navigation-dropdown-item">
-                <svg width="13" height="17" xmlns="http://www.w3.org/2000/svg"><path d="M6.408 13.916c-3.313 0-6-1.343-6-3 0-.612.371-1.18 1-1.654V7.916a5 5 0 0 1 3.041-4.6 2 2 0 0 1 3.507-1.664 2 2 0 0 1 .411 1.664 5.002 5.002 0 0 1 3.041 4.6v1.346c.629.474 1 1.042 1 1.654 0 1.657-2.687 3-6 3Zm0 1c.694 0 1.352-.066 1.984-.16.004.054.016.105.016.16a2 2 0 0 1-4 0c0-.055.012-.106.016-.16.633.094 1.29.16 1.984.16Z" fill="#EDD556"/>
+                <svg viewBox="0 0 13 17" width="16px" height="21px" xmlns="http://www.w3.org/2000/svg"><path d="M6.408 13.916c-3.313 0-6-1.343-6-3 0-.612.371-1.18 1-1.654V7.916a5 5 0 0 1 3.041-4.6 2 2 0 0 1 3.507-1.664 2 2 0 0 1 .411 1.664 5.002 5.002 0 0 1 3.041 4.6v1.346c.629.474 1 1.042 1 1.654 0 1.657-2.687 3-6 3Zm0 1c.694 0 1.352-.066 1.984-.16.004.054.016.105.016.16a2 2 0 0 1-4 0c0-.055.012-.106.016-.16.633.094 1.29.16 1.984.16Z" fill="#EDD556"/>
                 </svg>
                 <a href="#">
                   <span>Reminders</span>
                 </a>
               </li>
               <li class="intro__navigation-dropdown-item">
-                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0Zm0 2.133a5.867 5.867 0 1 0 0 11.734A5.867 5.867 0 0 0 8 2.133ZM8 3.2a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6Zm-.533 2.667a.533.533 0 0 0-.534.533v2.133c0 .295.24.534.534.534h3.2a.533.533 0 0 0 0-1.067H8V6.4a.533.533 0 0 0-.533-.533Z" fill="#8E4CB6"/>
+                <svg viewBox="0 0 16 16" width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0Zm0 2.133a5.867 5.867 0 1 0 0 11.734A5.867 5.867 0 0 0 8 2.133ZM8 3.2a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6Zm-.533 2.667a.533.533 0 0 0-.534.533v2.133c0 .295.24.534.534.534h3.2a.533.533 0 0 0 0-1.067H8V6.4a.533.533 0 0 0-.533-.533Z" fill="#8E4CB6"/>
                 </svg>
                 <a href="#">
                   <span>Planning</span></a>
@@ -55,9 +55,9 @@
             </ul>
           </li>
           <li class="intro__navigation-item">
-            <button class="intro__navigation-button">
+            <a href="#" class="intro__navigation-button">
               <span>Company</span>
-            </button>
+            </a>
             <ul class="intro__navigation-dropdown">
               <li class="intro__navigation-dropdown-item">
                 <a href="#">
@@ -81,44 +81,48 @@
               <span>Careers</span>
             </a>
           </li>
-        </button>
-        <li class="intro__navigation-item">
-          <a href='#' class="intro__navigation-link">
-            <span>About</span>
-          </a>
-        </li>
-      </button>
-    </ul>
-  </nav>
-  <button class="intro__header-menu">
-    <img src="images/icon-menu.svg" alt="logo of a menu">
-  </button>
-</header>
-<section>
-  <h1 class="sr-only">heading for html validator</h1>
-  <figure class="intro__hero">
-    <picture>
-      <source media="(min-width:1440px)" srcset="images/image-hero-desktop.png">
-      <img src="images/image-hero-mobile.png" alt="image of person with laptop" class="intro__hero-image">
-    </picture>
-  </figure>
-  <article class="intro__article">
-    <h1 class="intro__headline">Make remote work</h1>
-    <p class="intro__copy">Get your team in sync, no matter your location. Streamline processes, 
+          <li class="intro__navigation-item">
+            <a href='#' class="intro__navigation-link">
+              <span>About</span>
+            </a>
+          </li>
+          <li class="intro__navigation-item">
+            <button>
+              <span>Login</span>
+            </button>
+          </li>
+          <li class="intro__navigation-item">
+            <button>
+              <span>Register</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <h1 class="sr-only">heading for html validator</h1>
+      <figure class="intro__hero">
+        <picture>
+          <source media="(min-width:1440px)" srcset="images/image-hero-desktop.png">
+          <img src="images/image-hero-mobile.png" alt="image of person with laptop" class="intro__hero-image">
+        </picture>
+      </figure>
+      <article class="intro__article">
+        <h2 class="intro__headline">Make remote work</h2>
+        <p class="intro__copy">Get your team in sync, no matter your location. Streamline processes, 
           create team rituals, and watch productivity soar.</p>
-    <a href="#" class="intro__button">
-      <span>Learn more</span>
-    </a>
-  </article>
-  <footer>
-    <ul class="intro__list intro__list--footer ">
-      <li class="intro__item"><img src="images/client-databiz.svg" alt="logo"></li>
-      <li class="intro__item"><img src="images/client-audiophile.svg" alt="logo"></li>
-      <li class="intro__item"><img src="images/client-meet.svg" alt="logo"></li>
-      <li class="intro__item"><img src="images/client-maker.svg" alt="logo"></li>
-    </ul>
-  </footer>
-</svg>
-</section>
-</body>
+        <a href="#" class="intro__button">
+          <span>Learn more</span>
+        </a>
+      </article>
+      <footer>
+        <ul class="intro__list intro__list--footer ">
+          <li class="intro__item"><img src="images/client-databiz.svg" alt="logo"></li>
+          <li class="intro__item"><img src="images/client-audiophile.svg" alt="logo"></li>
+          <li class="intro__item"><img src="images/client-meet.svg" alt="logo"></li>
+          <li class="intro__item"><img src="images/client-maker.svg" alt="logo"></li>
+        </ul>
+      </footer>
+    </section>
+  </body>
 </html>
