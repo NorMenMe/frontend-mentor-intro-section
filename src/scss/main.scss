@@ -75,8 +75,10 @@ body {
   background-color: white;
 
   @media ( min-width: 1065px ) {
-    flex-direction: row;  
-    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+    position: relative;
   }
 
 }
@@ -139,6 +141,11 @@ body {
 
   &:nth-last-child(-n+2) {
 
+    @media ( min-width: 1065px ) {
+      position: absolute;
+      right: 0;
+    }  
+
     button {
       display: block;
       width: 100%;
@@ -148,7 +155,7 @@ body {
       font-size: 16px;
 
       @media ( min-width: 1065px ) {
-        padding: unset;
+        padding: unset;        
       } 
     }
   }
@@ -157,6 +164,11 @@ body {
     border: 2px solid #696969;
     border-radius: 20px;
     margin-top: 0;
+
+    @media ( min-width: 1065px ) {
+      position: absolute;
+      right: 50px;
+    }  
   }
 }
 
