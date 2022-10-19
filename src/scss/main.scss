@@ -89,6 +89,7 @@ body {
 
   @media ( min-width: 1065px ) {
     margin-top: unset;
+    padding-right: 2rem;
   }  
 
   > * {
@@ -109,13 +110,18 @@ body {
     }  
   }
 
-  &:nth-child(-n+2) {
+  .intro__navigation-button {
 
     &::before,
     &::after {
       position: absolute;
       top: 0;
       left: 95px;
+
+      @media ( min-width: 1065px ) {
+        right: 15px;
+        left: unset;
+      } 
     }
 
     &::before {
@@ -135,15 +141,15 @@ body {
     &:hover::after {
       visibility: visible;
     }
-
-    
   }
+
+  
 
   &:nth-last-child(-n+2) {
 
     @media ( min-width: 1065px ) {
       position: absolute;
-      right: 0;
+      right: 100px;
     }  
 
     button {
@@ -166,8 +172,7 @@ body {
     margin-top: 0;
 
     @media ( min-width: 1065px ) {
-      position: absolute;
-      right: 50px;
+      right: 0;
     }  
   }
 }
