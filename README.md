@@ -1,4 +1,4 @@
 
 ## Welcome! 👋
 
-Building ui elements according designs from https://www.frontendmentor.io/challenges
+Building ui elements according to the designs from https://www.frontendmentor.io/challenges
