@@ -116,41 +116,6 @@ body {
     }  
   }
 
-  .intro__navigation-button {
-
-    &::before,
-    &::after {
-      position: absolute;
-      top: 0;
-      left: 95px;
-
-      @media ( min-width: 1065px ) {
-        right: 15px;
-        left: unset;
-      } 
-    }
-
-    &::before {
-      content: url('../images/icon-arrow-down.svg');
-      visibility: visible;
-    }
-
-    &:hover::before {
-      visibility: hidden;
-    }
-
-    &::after {
-      content: url('../images/icon-arrow-up.svg');
-      visibility: hidden;
-    }
-
-    &:hover::after {
-      visibility: visible;
-    }
-  }
-
-  
-
   &:nth-last-child(-n+2) {
 
     @media ( min-width: 1065px ) {
@@ -184,6 +149,42 @@ body {
     }  
   }
 }
+
+.intro__navigation-button {
+ span {
+  position: relative;
+
+  &::before,
+  &::after {
+    position: absolute;
+    left: 95px;
+
+    @media ( min-width: 1065px ) {
+      right: -15px;
+      left: unset;
+    } 
+  }
+
+  &::before {
+    content: url('../images/icon-arrow-down.svg');
+    visibility: visible;
+  }
+
+  &::after {
+    content: url('../images/icon-arrow-up.svg');
+    visibility: hidden;
+  }
+
+  .intro__navigation-item:hover  &::before {
+    visibility: hidden;
+  }
+
+  .intro__navigation-item:hover &::after {
+    visibility: visible;
+  }
+ }
+}
+
 
 .intro__navigation-dropdown {
   display: none;
