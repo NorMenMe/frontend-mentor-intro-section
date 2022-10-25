@@ -8,7 +8,6 @@ body {
   justify-content: space-between;
   padding: 1.5rem 1rem;
 
-
   @media ( min-width: 1065px ) {
     padding: 2rem;
   }
@@ -16,17 +15,6 @@ body {
   img {
     height: 27px;
   }
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
 }
 
 /* navigation */
@@ -101,12 +89,11 @@ body {
   > * {
     color: #696969;	
     text-decoration: none;
-  }
 
-  > *:hover {
-    color: #919191;	
+    &:hover {
+      color: #919191;	
+    }
   }
-
 
   &:first-child {
     margin-top: 5rem;
@@ -201,6 +188,10 @@ body {
     text-decoration: none;
     color: #696969;
     padding-left: 1rem;
+
+    &:hover {
+      color: #919191;	
+    }
   }
 
   .intro__navigation-item:nth-child(2) & {
@@ -318,6 +309,19 @@ body {
   }
 }
   
+// sr-only class usually in general settings of a codebase
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 /* hero */
 
 .intro__hero {
