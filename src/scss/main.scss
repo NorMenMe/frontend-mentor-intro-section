@@ -9,7 +9,7 @@ body {
   padding: 1.5rem 1rem;
 
   @media ( min-width: 1065px ) {
-    padding: 2rem;
+    padding: 2.5rem;
   }
 
   img {
@@ -74,10 +74,10 @@ body {
 
 .intro__header-navigation-item {
   margin-top: 1.5rem;
+  flex-basis: 10%;
 
   @media ( min-width: 1065px ) {
     margin-top: unset;
-    padding-right: 2rem;
   }  
 
   > * {
@@ -135,6 +135,7 @@ body {
   position: relative;
 
   &::after {
+    content: url('../images/icon-arrow-down.svg');
     position: absolute;
     left: 95px;
 
@@ -142,10 +143,6 @@ body {
       right: -15px;
       left: unset;
     } 
-  }
-
-  &::after {
-    content: url('../images/icon-arrow-down.svg');
 
     .intro__header-navigation-item:hover & {
       transform: rotate(180deg);
