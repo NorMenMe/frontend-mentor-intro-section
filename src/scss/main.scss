@@ -1,6 +1,7 @@
 body {
   font-family: 'Epilogue', sans-serif;
   margin: 0;
+  background-color: #fafafa;
 }
 
 .intro__header {
@@ -9,7 +10,7 @@ body {
   padding: 1.5rem 1rem;
 
   @media ( min-width: 1065px ) {
-    padding: 2.5rem;
+    padding: 2rem 2.5rem 2rem;
   }
 
   img {
@@ -58,7 +59,7 @@ body {
   grid-column: 2 / 4;
   display: flex;
   flex-direction: column;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
   margin: 0;
   list-style-type: none;
   background-color: white;
@@ -78,6 +79,7 @@ body {
 
   @media ( min-width: 1065px ) {
     margin-top: unset;
+    position: relative;
   }  
 
   > * {
@@ -134,10 +136,15 @@ body {
  span {
   position: relative;
 
+  @media ( min-width: 1065px ) {
+    font-size: 14px;
+  } 
+
   &::after {
     content: url('../images/icon-arrow-down.svg');
     position: absolute;
     left: 95px;
+    top: 0;
 
     @media ( min-width: 1065px ) {
       right: -15px;
@@ -158,27 +165,62 @@ body {
   margin-top: 2rem;
   padding-left: 1rem;
   
-  li {
-    margin-top: 1rem;
-  }
-  
   a {
     text-decoration: none;
     color: #696969;
     padding-left: 1rem;
+
+    @media ( min-width: 1065px ) {
+      font-size: 15px;
+      padding-left: 2rem;
+    } 
 
     &:hover {
       color: #919191;	
     }
   }
 
-  .intro__header-navigation-item:nth-child(2) & {
-    padding-left: 0;
-  }
-
 	.intro__header-navigation-item:hover & {
 		display: block;
+    
+    @media ( min-width: 1065px ) {
+      position: absolute;
+      background-color: #fff;
+      right: 40px;
+      width: 120px;
+      border-radius: 15px;
+      padding: 0.5rem 1rem 1rem;
+      top: 5px;
+      box-shadow: 0 0 15px 1px lightgrey;
+    } 
 	}
+
+  .intro__header-navigation-item:nth-child(2):hover & {
+    padding-left: 0;
+    
+    @media ( min-width: 1065px ) {
+      width: 80px;
+      right: 0;
+      padding: 0.5rem 1rem 1.5rem;
+    }
+
+    a {
+      @media ( min-width: 1065px ) {
+        padding-left: 0;
+        padding-right: 0;
+      }  
+    }
+  }
+}
+
+.intro__header-navigation-dropdown-item {
+  margin-top: 1rem;
+  position: relative;
+
+  svg {
+    position: absolute;
+    bottom: 0;
+  }
 }
 
 /* section */
