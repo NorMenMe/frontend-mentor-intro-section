@@ -31,6 +31,7 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height .4s ease;
+  z-index: 998;
   
   &::before {
     grid-column: 1 / 2;
@@ -99,6 +100,13 @@ body {
 
     @media ( min-width: 1065px ) {
       margin-top: unset;
+    }  
+  }
+
+  &:nth-child(4) {
+    @media ( min-width: 1065px ) {
+      position: relative;
+      right: 20px;
     }  
   }
 
@@ -227,7 +235,9 @@ body {
   @media ( min-width: 1065px ) {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  column-gap: 8rem;
+  padding: 3rem 8rem 0rem 10rem;
   }
 }
 
@@ -244,36 +254,54 @@ body {
   @media ( min-width: 1065px ) {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+    text-align: start;
   }
 }
 
 .intro__headline {
   font-size: 36px;
+  margin-bottom: 0;
+
+  @media ( min-width: 1065px ) {
+    font-size: 75px;
+  }  
 }
 
 .intro__copy {
   color: #696969;
   line-height: 1.6;
   padding: 0 0.5rem;
+
+  @media ( min-width: 1065px ) {
+    font-size: 18px;
+    margin-top: 3rem;
+    padding-left: 0;
+    padding-right: 1rem;
+  }  
+
 }
 
 .intro__button {
-  font-size: 16px;
   display: block;
   text-decoration: none;
   margin-top: 2.5rem;
+
+  @media ( min-width: 1065px ) {
+    margin-top: 4rem;
+  }  
   
 	span {
+    font-size: 16px;
 		background-color: hsl(0, 0%, 8%);
 		color: hsl(0, 0%, 98%);
 		padding: 1rem 1.5rem;
 		border-radius: 15px;
-	}
-}
 
-.intro__footer {
-  margin-top: 4rem;
-  padding: 0 1rem;
+    @media ( min-width: 1065px ) {
+      font-size: 18px;
+      padding: 1.2rem 2rem;
+    }  
+	}
 }
 
 /* burger menu */
@@ -283,7 +311,7 @@ body {
 }
 
 .intro__header-menu-icon {
-  z-index: 1;
+  z-index: 999;
   cursor: pointer;
   position: relative;
   user-select: none;
@@ -376,13 +404,13 @@ body {
 
 }
 
-
 /* footer */
 
 .intro__footer {
-  padding-right: 0;
+  margin-top: 4rem;
 
   @media ( min-width: 1065px ) {
+    position: relative;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
   }
@@ -391,13 +419,24 @@ body {
 .intro__footer-list {
   display: flex;
   justify-content: space-evenly;
-  padding: 0;
+  padding: 0 0 0 1rem;
   list-style-type: none;
+
+  @media ( min-width: 1065px ) {
+    position: absolute;
+    width: 100%;
+    bottom: -25px;
+  }
 }
 
 .intro__footer-list-item {
   width: 80px;
   height: 30px;
+
+  @media ( min-width: 1065px ) {
+   width: 110px;
+   height: 40px; 
+  }
 
   &:nth-child(-n+2) {
     position: relative;
