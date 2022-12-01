@@ -164,6 +164,14 @@ body {
  }
 }
 
+.intro__header-navigation-dropdown-wrapper {
+  @media ( min-width: 1065px ) {
+    position: absolute;
+    right: 40px;
+    width: 155px;
+    top: 5px;
+  } 
+}
 
 .intro__header-navigation-dropdown {
   display: none;
@@ -190,13 +198,9 @@ body {
 		display: block;
     
     @media ( min-width: 1065px ) {
-      position: absolute;
       background-color: #fff;
-      right: 40px;
-      width: 120px;
       border-radius: 15px;
-      padding: 0.5rem 1rem 1rem;
-      top: 5px;
+      padding: 0.5rem 1.5rem 1.5rem;
       box-shadow: 0 0 15px 1px lightgrey;
     } 
 	}
