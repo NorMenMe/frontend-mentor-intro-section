@@ -4,7 +4,7 @@ body {
   background-color: #fafafa;
 }
 
-.intro__header {
+.header {
   display: flex;
   justify-content: space-between;
   padding: 1.5rem 1rem;
@@ -20,11 +20,11 @@ body {
 
 /* menu */
 
-.intro__header-menu-button {
+.header__menu-button {
   display: none;
 }
 
-.intro__header-menu-icon {
+.header__menu-icon {
   z-index: 999;
   cursor: pointer;
   position: relative;
@@ -41,7 +41,7 @@ body {
     height: 2px;
     position: relative;
 
-    .intro__header-menu-button:checked ~ & {
+    .header__menu-button:checked ~ & {
       background: transparent;
     }
   }
@@ -56,7 +56,7 @@ body {
     position: absolute;
     transition: all .2s ease-out;
 
-    .intro__header-menu-button:checked ~ & {
+    .header__menu-button:checked ~ & {
       top: 0;
     }
   }
@@ -64,7 +64,7 @@ body {
   span::before {
     top: 7px;
 
-  .intro__header-menu-button:checked ~ & {
+  .header__menu-button:checked ~ & {
     transform: rotate(-45deg);
   }
   }
@@ -72,7 +72,7 @@ body {
   span::after {
     top: -7px;
 
-    .intro__header-menu-button:checked ~ & {
+    .header__menu-button:checked ~ & {
       transform: rotate(45deg);
     }
   }
@@ -80,7 +80,7 @@ body {
 
 /* navigation */
 
-.intro__header-navigation {
+.header__navigation {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   position: absolute;
@@ -99,7 +99,7 @@ body {
     background-color: rgba($color: #000000, $alpha: .5)
   }
   
-  .intro__header-menu-button:checked ~ & {
+  .header__menu-button:checked ~ & {
     max-height: 100vh;
   }  
 
@@ -110,7 +110,7 @@ body {
   }
 }
 
-.intro__header-navigation-list {
+.header__navigation-list {
   grid-column: 2 / 4;
   display: flex;
   flex-direction: column;
@@ -127,7 +127,7 @@ body {
   }
 }
 
-.intro__header-navigation-item {
+.header__navigation-item {
   margin-top: 1.5rem;
 
   @media ( min-width: 1440px ) {
@@ -194,7 +194,7 @@ body {
   }
 }
 
-.intro__header-navigation-button {
+.header__navigation-button {
  span {
   position: relative;
 
@@ -209,14 +209,14 @@ body {
       left: unset;
     } 
 
-    .intro__header-navigation-item:hover & {
+    .header__navigation-item:hover & {
       transform: rotate(180deg);
     }
   }
  }
 }
 
-.intro__header-navigation-dropdown-wrapper {
+.header__navigation-dropdown-wrapper {
   @media ( min-width: 1440px ) {
     position: absolute;
     right: 40px;
@@ -224,7 +224,7 @@ body {
     top: 5px;
   } 
 
-  .intro__header-navigation-item:nth-child(2) & {
+  .header__navigation-item:nth-child(2) & {
     @media ( min-width: 1440px ) {
       width: 115px;
       right: 0;
@@ -232,7 +232,7 @@ body {
   }
 }
 
-.intro__header-navigation-dropdown {
+.header__navigation-dropdown {
   display: none;
   list-style-type: none;
   margin-top: 2rem;
@@ -253,7 +253,7 @@ body {
     }
   }
 
-	.intro__header-navigation-item:hover & {
+	.header__navigation-item:hover & {
 		display: block;
     
     @media ( min-width: 1440px ) {
@@ -264,7 +264,7 @@ body {
     } 
 	}
 
-  .intro__header-navigation-item:nth-child(2):hover & {
+  .header__navigation-item:nth-child(2):hover & {
     padding-left: 0;
     
     @media ( min-width: 1440px ) {
@@ -280,7 +280,7 @@ body {
   }
 }
 
-.intro__header-navigation-dropdown-item {
+.header__navigation-dropdown-item {
   margin-top: 1rem;
   position: relative;
 
@@ -292,7 +292,7 @@ body {
 
 /* main */
 
-.intro__main {
+.main {
   @media ( min-width: 1440px ) {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -304,7 +304,7 @@ body {
 
 /* article */
 
-.intro__main-article {
+.main__article {
   text-align: center;
   margin-top: 3rem;
   padding: 0 .5rem;
@@ -316,7 +316,7 @@ body {
   }
 }
 
-.intro__main-article-headline {
+.main__article-headline {
   font-size: 36px;
   margin-bottom: 0;
 
@@ -325,7 +325,7 @@ body {
   }  
 }
 
-.intro__main-article-copy {
+.main__article-copy {
   color: #696969;
   line-height: 1.6;
   padding: 0 0.5rem;
@@ -339,7 +339,7 @@ body {
 
 }
 
-.intro__main-article-button {
+.main__article-button {
   display: block;
   text-decoration: none;
   margin-top: 2.5rem;
@@ -379,7 +379,7 @@ body {
 
 /* hero */
 
-.intro__main-hero-image {
+.main__hero-image {
   margin: 0;
 
   @media ( min-width: 1440px ) {
@@ -396,7 +396,7 @@ body {
 
 /* footer */
 
-.intro__main-footer {
+.main__footer {
   margin-top: 4rem;
 
   @media ( min-width: 1440px ) {
@@ -406,7 +406,7 @@ body {
   }
 }
 
-.intro__main-footer-list {
+.main__footer-list {
   display: flex;
   justify-content: space-evenly;
   padding: 0 0 0 1rem;
@@ -419,7 +419,7 @@ body {
   }
 }
 
-.intro__main-footer-list-item {
+.main__footer-list-item {
   width: 80px;
   height: 30px;
 
