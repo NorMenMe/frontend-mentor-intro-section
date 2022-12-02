@@ -171,6 +171,13 @@ body {
     width: 155px;
     top: 5px;
   } 
+
+  .intro__header-navigation-item:nth-child(2) & {
+    @media ( min-width: 1065px ) {
+      width: 115px;
+      right: 0;
+    }   
+  }
 }
 
 .intro__header-navigation-dropdown {
@@ -199,7 +206,7 @@ body {
     
     @media ( min-width: 1065px ) {
       background-color: #fff;
-      border-radius: 15px;
+      border-radius: 10px;
       padding: 0.5rem 1.5rem 1.5rem;
       box-shadow: 0 0 15px 1px lightgrey;
     } 
@@ -209,9 +216,7 @@ body {
     padding-left: 0;
     
     @media ( min-width: 1065px ) {
-      width: 80px;
-      right: 0;
-      padding: 0.5rem 1rem 1.5rem;
+      padding: 0.5rem 1rem 1.5rem 1.5rem;
     }
 
     a {
