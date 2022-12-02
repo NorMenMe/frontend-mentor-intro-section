@@ -18,6 +18,66 @@ body {
   }
 }
 
+/* menu */
+
+.intro__header-menu-button {
+  display: none;
+}
+
+.intro__header-menu-icon {
+  z-index: 999;
+  cursor: pointer;
+  position: relative;
+  top: 5px;
+
+  @media (min-width:1440px) { 
+    visibility: hidden;
+  }
+  
+  span {
+    background-color: #333;
+    display: block;
+    width: 30px;
+    height: 2px;
+    position: relative;
+
+    .intro__header-menu-button:checked ~ & {
+      background: transparent;
+    }
+  }
+
+  span::before,
+  span::after {
+    content: '';
+    background-color:  #333;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+
+    .intro__header-menu-button:checked ~ & {
+      top: 0;
+    }
+  }
+
+  span::before {
+    top: 7px;
+
+  .intro__header-menu-button:checked ~ & {
+    transform: rotate(-45deg);
+  }
+  }
+
+  span::after {
+    top: -7px;
+
+    .intro__header-menu-button:checked ~ & {
+      transform: rotate(45deg);
+    }
+  }
+}
+
 /* navigation */
 
 .intro__header-navigation {
@@ -34,8 +94,8 @@ body {
   z-index: 998;
   
   &::before {
-    grid-column: 1 / 2;
     content: '';
+    grid-column: 1 / 2;
     background-color: rgba($color: #000000, $alpha: .5)
   }
   
@@ -46,14 +106,8 @@ body {
   @media ( min-width: 1440px ) {
     display: flex;
     position: static;
-    max-height: unset;
-    height: unset;
-    grid-template-columns: unset;
-    top: unset;
     overflow: unset;
-    transition: unset;
   }
-
 }
 
 .intro__header-navigation-list {
@@ -63,16 +117,14 @@ body {
   padding: 0 2rem;
   margin: 0;
   list-style-type: none;
-  background-color: white;
+  background-color: #ffffff;
 
   @media ( min-width: 1440px ) {
     flex-direction: row;
     width: 100%;
     justify-content: flex-start;
     position: relative;
-    background-color: unset;
   }
-
 }
 
 .intro__header-navigation-item {
@@ -313,69 +365,7 @@ body {
 	}
 }
 
-/* burger menu */
 
-.intro__header-menu-button {
-  display: none;
-}
-
-.intro__header-menu-icon {
-  z-index: 999;
-  cursor: pointer;
-  position: relative;
-  visibility: visible;
-  top: 5px;
-
-  span {
-    background: #333;
-    display: block;
-    width: 30px;
-    height: 2px;
-    position: relative;
-
-    .intro__header-menu-button:checked ~ & {
-      background: transparent;
-    }
-  }
-
-  span::before {
-    top: 7px;
-
-  .intro__header-menu-button:checked ~ & {
-    transform: rotate(-45deg);
-  }
-  }
-
-  span::after {
-    top: -7px;
-
-    .intro__header-menu-button:checked ~ & {
-      transform: rotate(45deg);
-    }
-  }
-
-  span::before,
-  span::after {
-    background: #333;
-    display: block;
-    width: 100%;
-    height: 100%;
-    content: '';
-    position: absolute;
-    transition: all .2s ease-out;
-
-    .intro__header-menu-button:checked ~ & {
-      top: 0;
-    }
-
-  }
-}
-
-@media (min-width:1440px) { 
-  .intro__header-menu-icon {
-    visibility: hidden;
-  }
-}
   
 // sr-only class usually in general settings of a codebase
 
