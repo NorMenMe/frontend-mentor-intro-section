@@ -323,7 +323,6 @@ body {
   z-index: 999;
   cursor: pointer;
   position: relative;
-  user-select: none;
   visibility: visible;
   top: 5px;
 
@@ -373,12 +372,6 @@ body {
 }
 
 @media (min-width:1440px) { 
-  #intro__header-menu-button {
-    position: absolute;
-    top: -100%;
-    bottom: -100%;
-  }
-
   .intro__header-menu-icon {
     visibility: hidden;
   }
