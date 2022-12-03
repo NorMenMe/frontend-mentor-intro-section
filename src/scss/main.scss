@@ -4,6 +4,21 @@ body {
   background-color: #fafafa;
 }
 
+// utility class for screen reader
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* header */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -17,8 +32,6 @@ body {
     height: 27px;
   }
 }
-
-/* menu */
 
 .header__menu-button {
   display: none;
@@ -302,6 +315,22 @@ body {
   }
 }
 
+/* hero */
+
+.main__hero-image {
+  margin: 0;
+
+  @media ( min-width: 1440px ) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    padding-left: 2rem;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
 /* article */
 
 .main__article {
@@ -333,10 +362,8 @@ body {
   @media ( min-width: 1440px ) {
     font-size: 18px;
     margin-top: 3rem;
-    padding-left: 0;
-    padding-right: 1rem;
+    padding: 0 1rem 0 0;
   }  
-
 }
 
 .main__article-button {
@@ -350,8 +377,8 @@ body {
   
 	span {
     font-size: 16px;
-		background-color: hsl(0, 0%, 8%);
-		color: hsl(0, 0%, 98%);
+		background-color: #141414;
+		color: #fafafa;
 		padding: 1rem 1.5rem;
 		border-radius: 15px;
 
@@ -360,38 +387,6 @@ body {
       padding: 1.2rem 2rem;
     }  
 	}
-}
-
-
-  
-// sr-only class usually in general settings of a codebase
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
-/* hero */
-
-.main__hero-image {
-  margin: 0;
-
-  @media ( min-width: 1440px ) {
-    grid-column: 2 / 3;
-    grid-row: 1 / 3;
-    padding-left: 2rem;
-  }
-
-  img {
-    width: 100%;
-  }
-
 }
 
 /* footer */
@@ -407,10 +402,10 @@ body {
 }
 
 .main__footer-list {
+  list-style-type: none;
   display: flex;
   justify-content: space-evenly;
   padding: 0 0 0 1rem;
-  list-style-type: none;
 
   @media ( min-width: 1440px ) {
     position: absolute;
