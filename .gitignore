@@ -2,4 +2,6 @@ dist/
 
 src/styles/
 
+.DS_Store
+
 node_modules/
