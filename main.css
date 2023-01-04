@@ -79,6 +79,13 @@
   transform: translateX(150%);
   transition: transform 0.3s ease-out;
 }
+@media ( min-width: 1440px ) {
+  .header__navigation {
+    transform: unset;
+    height: unset;  
+  }
+}
+
 .header__menu-button:checked ~ .header__navigation {
   transform: translateX(0);
 }
@@ -110,6 +117,7 @@
     width: 100%;
     justify-content: flex-start;
     position: relative;
+    background-color: unset;
   }
 }
 
