@@ -82,9 +82,9 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  max-height: 0;
+  max-width: 0;
   overflow: hidden;
-  transition: max-height .4s ease;
+  transition: max-width .3s ease;
   z-index: 998;
   
   &::before {
@@ -94,7 +94,7 @@
   }
   
   .header__menu-button:checked ~ & {
-    max-height: 100vh;
+    max-width: 100%;
   }  
 
   @media ( min-width: 1440px ) {
