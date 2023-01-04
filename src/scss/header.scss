@@ -82,10 +82,14 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  max-height: 0;
   overflow: hidden;
-  transition: max-height .4s ease;
   z-index: 998;
+  transform: translateX(150%);
+  transition: transform 0.3s ease-out;
+
+  .header__menu-button:checked ~ & {
+    transform: translateX(0);
+  }
   
   &::before {
     content: '';
@@ -93,10 +97,6 @@
     background-color: rgba($color: #000000, $alpha: .5)
   }
   
-  .header__menu-button:checked ~ & {
-    max-height: 100vh;
-  }  
-
   @media ( min-width: 1440px ) {
     display: flex;
     position: static;
