@@ -90,6 +90,11 @@
   .header__menu-button:checked ~ & {
     transform: translateX(0);
   }
+
+  @media ( min-width: 1440px ) {
+    transform: unset;
+    height: unset;
+  }
   
   &::before {
     content: '';
@@ -118,6 +123,7 @@
     width: 100%;
     justify-content: flex-start;
     position: relative;
+    background-color: unset;
   }
 }
 
