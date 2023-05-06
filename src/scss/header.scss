@@ -212,7 +212,7 @@
  }
 }
 
-.header__navigation-dropdown-wrapper {
+.header__navigation-dropdown {
   @media ( min-width: 1440px ) {
     position: absolute;
     right: 40px;
@@ -228,7 +228,7 @@
   }
 }
 
-.header__navigation-dropdown {
+.dropdown__list {
   display: none;
   list-style-type: none;
   margin-top: 2rem;
@@ -276,7 +276,7 @@
   }
 }
 
-.header__navigation-dropdown-item {
+.dropdown__item {
   margin-top: 1rem;
   position: relative;
 
