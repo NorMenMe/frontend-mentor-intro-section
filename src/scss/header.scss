@@ -130,16 +130,6 @@
     position: relative;
     font-size: 14px;
   }  
-
-  > a {
-    color: #696969;	
-    text-decoration: none;
-    cursor: pointer;
-
-    &:hover {
-      color: #919191;	
-    }
-  }
 }
 
 .navigation__item:first-child {
@@ -175,6 +165,19 @@
   }  
 }
 
+.navigation__button {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  color: #696969;	
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    color: #919191;	
+  }
+}
+
 .navigation__item:where(li:nth-child(5), li:last-child) {
   @media ( min-width: 1440px ) {
     position: absolute;
@@ -183,8 +186,6 @@
 
 .navigation__item:where(li:nth-child(5), li:last-child) .navigation__button {
     width: 100%;
-    background-color: transparent;
-    border: none;
     padding: 1rem;
     font-size: 16px;
     cursor: pointer;
