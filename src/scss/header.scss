@@ -204,13 +204,13 @@
     top: 0;
 
     @media ( min-width: 1440px ) {
+      left: revert;
       right: -15px;
-      left: unset;
     } 
+  }
 
-    .navigation__item:hover & {
-      transform: rotate(180deg);
-    }
+  .navigation__item:hover &::after {
+    transform: rotate(180deg);
   }
 }
 
