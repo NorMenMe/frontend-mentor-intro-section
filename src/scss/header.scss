@@ -160,7 +160,6 @@
 
   @media ( min-width: 1440px ) {
     right: 0;
-    padding: 10px 24px;
     top: -10px;
   }  
 }
@@ -193,6 +192,13 @@
     @media ( min-width: 1440px ) {
       padding: revert;        
     } 
+}
+
+.navigation__item .navigation__button--register {
+  @media ( min-width: 1440px ) {
+    display: inline-flex;
+    padding: 10px 24px;
+  } 
 }
 
 .navigation__button .navigation__text--collapse {
