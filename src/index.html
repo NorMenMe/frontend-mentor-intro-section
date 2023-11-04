@@ -14,7 +14,10 @@
         <span class="sr-only">Go to landing page</span>
       </a>
       <nav class="header__navigation navigation" id="header__navigation" role="navigation">
-        <a href="#header__menu-button" class="header__navigation-close">X</a>
+        <a href="#header__menu-button" class="header__navigation-close" aria-hidden="true">
+          X
+        <span class="sr-only">Menu Button Close</span>
+        </a>
         <ul class="navigation__list">
           <li class="navigation__item">
             <button href="#" class="navigation__button">
@@ -98,7 +101,8 @@
           </li>
         </ul>
       </nav>
-      <a href="#header__navigation" class="header__menu-button" id="header__menu-button">
+      <a href="#header__navigation" class="header__menu-button" id="header__menu-button" aria-hidden="true">
+        <span class="sr-only">Menu Button Open</span>
         <span class="header__menu-icon-line"></span>
       </a>
     </header>
