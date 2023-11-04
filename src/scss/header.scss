@@ -10,10 +10,6 @@
   }
 }
 
-.header__menu-button {
-  display: none;
-}
-
 .header__menu-icon {
   z-index: 999;
   cursor: pointer;
@@ -25,20 +21,16 @@
   }
 }
   
-  .header__menu-icon .header__menu-icon-line {
+ .header__menu-icon-line {
     background-color: #333;
     display: block;
     width: 30px;
     height: 2px;
     position: relative;
-
-    .header__menu-button:checked ~ & {
-      background: transparent;
-    }
   }
 
-  .header__menu-icon .header__menu-icon-line::before,
-  .header__menu-icon .header__menu-icon-line::after {
+ .header__menu-icon-line::before,
+ .header__menu-icon-line::after {
     content: '';
     background-color:  #333;
     display: block;
@@ -47,23 +39,23 @@
     position: absolute;
     transition: all .2s ease-out;
 
-    .header__menu-button:checked ~ & {
+    .header__navigation:target + .header__menu-button & {
       top: 0;
     }
   }
 
-  .header__menu-icon .header__menu-icon-line::before {
+  .header__menu-icon-line::before {
     top: -7px;
 
-  .header__menu-button:checked ~ & {
+  .header__navigation:target + .header__menu-button & {
     transform: rotate(-45deg);
   }
   }
 
-  .header__menu-icon .header__menu-icon-line::after {
+  .header__menu-icon-line::after {
     top: 7px;
 
-    .header__menu-button:checked ~ & {
+    .header__navigation:target + .header__menu-button & {
       transform: rotate(45deg);
     }
   }
@@ -92,7 +84,7 @@
     position: static;
   }
   
-  .header__menu-button:checked ~ & {
+  &:target {
     transform: translateX(0);
   }
 }
