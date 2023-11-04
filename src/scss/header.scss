@@ -10,29 +10,25 @@
   }
 }
 
-.header__menu-icon {
-  z-index: 999;
-  cursor: pointer;
-  position: relative;
-  top: 5px;
-
+.header__menu-button {
   @media (min-width:1440px) { 
     visibility: hidden;
   }
 }
   
  .header__menu-icon-line {
-    background-color: #333;
-    display: block;
-    width: 30px;
-    height: 2px;
-    position: relative;
+   display: block;
+   position: relative;
+   width: 30px;
+   height: 2px;
+   color: #000;
+   background-color: currentColor;
   }
 
  .header__menu-icon-line::before,
  .header__menu-icon-line::after {
     content: '';
-    background-color:  #333;
+    background-color: currentColor;
     display: block;
     width: 100%;
     height: 100%;
