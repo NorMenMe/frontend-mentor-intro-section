@@ -31,8 +31,12 @@
    position: relative;
    width: 30px;
    height: 2px;
-   color: hsl(0, 0%, 0%);
+   color: #000;
    background-color: currentColor;
+
+   .header__navigation:target + .header__menu-button & {
+    background-color: transparent;
+   }
   }
 
  .header__menu-icon-line::before,
