@@ -23,13 +23,15 @@
   padding: 0;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 
   @media (min-width:1440px) { 
     visibility: hidden;
   }
 }
 
-.header__menu-toggle > svg, .menu__close > svg {
+.header__menu-toggle > svg, 
+.menu__close svg {
   width: 40px;
   height: 40px;
 }
@@ -69,8 +71,14 @@
 }
 
 .menu__close {
-  border: none;
-  background-color: transparent;
+  text-align: end;
+  margin-top: 1.5rem;
+
+  & > button {
+    border: none;
+    background-color: transparent;  
+    cursor: pointer;
+  }
 }
 
 .menu__inner {
