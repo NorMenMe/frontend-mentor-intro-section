@@ -20,11 +20,13 @@
         </svg>
       </button>
       <nav class="header__menu menu" id="header__menu" popover>
-        <button type="button" class="menu__close" popovertarget="header__menu" popovertargetaction="hide">
-          <span class="sr-only">Menu Button Close</span>
-          <svg aria-hidden="true"><path stroke="#000" stroke-width="4" d="m10 10 20 20m0-20L10 30"/></svg>
-        </button>
         <div class="menu__inner">
+          <div class="menu__close">
+            <button type="button" class="menu__close" popovertarget="header__menu" popovertargetaction="hide">
+              <span class="sr-only">Menu Button Close</span>
+              <svg aria-hidden="true"><path stroke="#000" stroke-width="4" d="m10 10 20 20m0-20L10 30"/></svg>
+            </button>
+          </div>
           <ul class="menu__list">
             <li class="menu__item">
               <button class="menu__button" type="button">
@@ -143,4 +145,6 @@
       </footer>
     </main>
   </body>
+  <script src="/scripts/popover-fn.js" type="module"></script>
+  <script src="/scripts/popover.js" type="module"></script>
 </html>
