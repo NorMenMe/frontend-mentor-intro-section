@@ -1,5 +1,4 @@
 // src/events.ts
-console.log('fire');
 var ToggleEvent = class extends Event {
   oldState;
   newState;
