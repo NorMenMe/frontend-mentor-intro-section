@@ -1,5 +1,7 @@
 @use 'header';
 @use 'base';
+@use 'slider';
+
 
 .main {
   @media ( min-width: 1440px ) {

@@ -1,0 +1,88 @@
+button {
+  border: none;
+  background-color: transparent;
+}
+
+
+// slider styles
+
+.carousel__carousel {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.carousel__arrow {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid red;
+    transform: rotate(45deg);
+ }
+  
+  .carousel__button--forward .carousel__arrow {
+    border-style: solid solid none none;
+}
+
+  .carousel__button--backward .carousel__arrow {
+    border-style: none none solid solid;
+}
+  
+.carousel__button[disabled] {
+    pointer-events: none;
+    
+   > span {
+      border-color: rgba(255,0,0,0.3);;
+    }
+  }  
+
+.carousel__slider {
+  display: flex;
+  width: 400px;
+  max-width: 400px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.carousel__item {
+    background-color: coral;
+    position: relative;
+    flex: 0 0 100%;
+    font-size: 30px;
+    text-align: center;
+    transition: left 0.5s ease;
+  } 
+
+.carousel__item:nth-child(odd) {
+    background-color: lavender;
+}
+
+.is-slide-value-0 .carousel__item {
+  left: 0;
+}
+
+.is-slide-value-1 .carousel__item {
+  left: -400px;
+}
+
+.is-slide-value-2 .carousel__item {
+  left: -800px;
+}
+
+.is-slide-value-3 .carousel__item {
+  left: -1200px;
+}
+
+.is-slide-value-4 .carousel__item {
+  left: -1600px;
+}
+
+.carousel__controls {
+  margin: 2rem;
+}
+
+.controls__list {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+}
