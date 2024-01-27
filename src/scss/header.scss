@@ -28,7 +28,7 @@
 }
 
 .header__menu-toggle > svg,
-.menu__close > svg {
+.menu__close-button > svg {
   width: 22px;
   height: 22px;
 }
@@ -70,12 +70,13 @@
 .menu__close {
   display: flex;
   justify-content: end;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   padding: 0;
 
   & > button {
     border: none;
     background-color: transparent;
+    padding: 0;
   }  
 }
 
