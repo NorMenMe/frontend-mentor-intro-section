@@ -89,14 +89,13 @@ const sliderImgs = document.querySelectorAll('.carousel img');
 
 sliderImgs && sliderImgs.forEach( image => {
   setTimeout(() => {
-    const currentImgWidth = image.clientWidth;
-    const root = document.documentElement;
-    root.style.setProperty('--current-slide-width', `${currentImgWidth}px`);
-
-    window.addEventListener('resize', () => {
+    const setCurrentSlideWidth = () => {
       const currentImgWidth = image.clientWidth;
       const root = document.documentElement;
       root.style.setProperty('--current-slide-width', `${currentImgWidth}px`);
-    })
+    }
+   
+  setCurrentSlideWidth();
+  window.addEventListener('resize', setCurrentSlideWidth)
   }, 1000);
 })
