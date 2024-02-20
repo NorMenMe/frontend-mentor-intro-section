@@ -37,19 +37,32 @@ button {
 
 .carousel__slider {
   display: flex;
-  width: 400px;
-  max-width: 400px;
+  max-width: 600px;
   overflow: hidden;
   border-radius: 5px;
 }
 
 .carousel__item {
-    background-color: coral;
     position: relative;
     flex: 0 0 100%;
     font-size: 30px;
     text-align: center;
     transition: left 0.5s ease;
+
+    & label {
+      display: block;
+    }
+
+    & picture {
+      display: flex;
+      align-items: center;
+      aspect-ratio: 3 / 2;
+    }
+
+    & img {
+      display: block;
+      max-width: 100%;
+    }
   } 
 
 .carousel__item:nth-child(odd) {
@@ -61,19 +74,19 @@ button {
 }
 
 .is-slide-value-1 .carousel__item {
-  left: -400px;
+  left: calc(var(--current-slide-width) * -1);
 }
 
 .is-slide-value-2 .carousel__item {
-  left: -800px;
+  left: calc(var(--current-slide-width) * -2);
 }
 
 .is-slide-value-3 .carousel__item {
-  left: -1200px;
+  left: calc(var(--current-slide-width) * -3);
 }
 
 .is-slide-value-4 .carousel__item {
-  left: -1600px;
+  left: calc(var(--current-slide-width) * -4);
 }
 
 .carousel__controls {

@@ -83,3 +83,20 @@ const handlePagination = (counter, inputs,button) => {
     inputs[counter + 1].setAttribute('disabled', '');
   }
 }
+
+// persistent transfer of img sizes
+const sliderImgs = document.querySelectorAll('.carousel img');
+
+sliderImgs && sliderImgs.forEach( image => {
+  setTimeout(() => {
+    const currentImgWidth = image.clientWidth;
+    const root = document.documentElement;
+    root.style.setProperty('--current-slide-width', `${currentImgWidth}px`);
+
+    window.addEventListener('resize', () => {
+      const currentImgWidth = image.clientWidth;
+      const root = document.documentElement;
+      root.style.setProperty('--current-slide-width', `${currentImgWidth}px`);
+    })
+  }, 1000);
+})
