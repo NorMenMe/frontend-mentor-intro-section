@@ -16,7 +16,7 @@
       <button class="header__menu-toggle" type="button" popovertarget="header__menu">
         <span class="sr-only">Menu Button Open</span>
         <svg viewBox="2 5.7 19 19"  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" aria-hidden="true" class="inline-svg" >
-          <g class="svg-menu-toggle"><path d="M20.945 8.75c0 .69-.5 1.25-1.117 1.25H3.141c-.617 0-1.118-.56-1.118-1.25s.5-1.25 1.118-1.25h16.688c.616 0 1.116.56 1.116 1.25zM20.923 15c0 .689-.501 1.25-1.118 1.25H3.118C2.5 16.25 2 15.689 2 15s.5-1.25 1.118-1.25h16.687c.617 0 1.118.561 1.118 1.25zM20.969 21.25c0 .689-.5 1.25-1.117 1.25H3.164c-.617 0-1.118-.561-1.118-1.25S2.546 20 3.164 20h16.688c.617 0 1.117.561 1.117 1.25z" class="bar"/>{C}<path fill="none" d="M0 0h80v80H0z"/></g>
+          <g class="svg-menu-toggle"><path d="M20.945 8.75c0 .69-.5 1.25-1.117 1.25H3.141c-.617 0-1.118-.56-1.118-1.25s.5-1.25 1.118-1.25h16.688c.616 0 1.116.56 1.116 1.25zM20.923 15c0 .689-.501 1.25-1.118 1.25H3.118C2.5 16.25 2 15.689 2 15s.5-1.25 1.118-1.25h16.687c.617 0 1.118.561 1.118 1.25zM20.969 21.25c0 .689-.5 1.25-1.117 1.25H3.164c-.617 0-1.118-.561-1.118-1.25S2.546 20 3.164 20h16.688c.617 0 1.117.561 1.117 1.25z" class="bar"/><path fill="none" d="M0 0h80v80H0z"/></g>
         </svg>
       </button>
       <nav class="header__menu menu" id="header__menu" popover>
@@ -135,8 +135,12 @@
         </a>
       </h3>
       <div class="carousel__carousel">
-        <button class="carousel__button carousel__button--backward" aria-label="button backward" disabled>
-          <span class="carousel__arrow carousel__arrow--backward "></span>
+        <button class="carousel__button carousel__button--backward" aria-label="button backward" type="button" disabled>
+          <span class="carousel__arrow carousel__arrow--backward ">
+            <svg viewBox="130 0 17 260" xml:space="preserve" aria-hidden="true">
+              <g style="stroke:none;stroke-width:0;stroke-dasharray:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;fill:none;fill-rule:nonzero;opacity:1"><path d="M65.75 90a3.499 3.499 0 0 0 2.475-5.974L29.2 45 68.225 5.975a3.5 3.5 0 1 0-4.95-4.95l-41.5 41.5a3.499 3.499 0 0 0 0 4.949l41.5 41.5A3.487 3.487 0 0 0 65.75 90z" style="stroke:none;stroke-width:1;stroke-dasharray:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;fill:currentColor;fill-rule:nonzero;opacity:1" transform="matrix(2.81 0 0 2.81 1.407 1.407)"/></g>
+            </svg>
+          </span>
         </button>
         <ul class="carousel__slider is-slide-value-0">
           <li class="carousel__item">
@@ -175,8 +179,15 @@
             </label>
           </li>
         </ul>
-        <button class="carousel__button carousel__button--forward" aria-label="button forward">
-          <span class="carousel__arrow carousel__arrow--forward"></span>
+        <button class="carousel__button carousel__button--forward" aria-label="button forward" type="button">
+          <span class="carousel__arrow carousel__arrow--forward">
+            <svg viewBox="110 0 17 260" xml:space="preserve" aria-hidden="true">
+              <defs></defs>
+              <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+                <path d="M 24.25 90 c -0.896 0 -1.792 -0.342 -2.475 -1.025 c -1.367 -1.366 -1.367 -3.583 0 -4.949 L 60.8 45 L 21.775 5.975 c -1.367 -1.367 -1.367 -3.583 0 -4.95 c 1.367 -1.366 3.583 -1.366 4.95 0 l 41.5 41.5 c 1.367 1.366 1.367 3.583 0 4.949 l -41.5 41.5 C 26.042 89.658 25.146 90 24.25 90 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+              </g>
+            </svg>
+          </span>
         </button>
       </div>
       <div class="carousel__controls controls">
