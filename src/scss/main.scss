@@ -1,5 +1,7 @@
 @use 'header';
 @use 'base';
+@use 'slider';
+
 
 .main {
   @media ( min-width: 1440px ) {
@@ -15,6 +17,7 @@
 
 .main__hero-image {
   margin: 0;
+  aspsect-ratio: 3 / 2;
 
   @media ( min-width: 1440px ) {
     grid-column: 2 / 3;
@@ -24,6 +27,7 @@
 
   img {
     width: 100%;
+    object-fit: cover;
   }
 }
 

@@ -1,0 +1,130 @@
+button {
+  border: none;
+  background-color: transparent;
+}
+
+
+// slider styles
+
+.carousel__carousel {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+}
+   
+.carousel__button {
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  padding: 10px;
+}  
+
+@media ( min-width: 700px ) {
+  .carousel__button {
+    position: static;
+    transform: unset;
+    height: fit-content;
+    align-self: center;
+    border: 1px solid rgba(128, 128, 128, 0.6);
+    border-radius: 50%; 
+  }
+}
+
+.carousel__button--backward {
+  left: 10px;
+  z-index: 2;
+}
+
+.carousel__button--forward {
+  right: 10px;
+}
+
+.carousel__button[disabled] {
+  pointer-events: none;
+}  
+
+.carousel__arrow {
+  width: 15px;
+  height: 15px;
+
+  & > svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media ( min-width: 700px ) {
+  .carousel__arrow {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.carousel__slider {
+  display: flex;
+  max-width: 600px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.carousel__item {
+    position: relative;
+    flex: 0 0 100%;
+    font-size: 30px;
+    text-align: center;
+    transition: left 0.5s ease;
+
+    & label {
+      display: block;
+    }
+
+    & picture {
+      display: flex;
+      align-items: center;
+      aspect-ratio: 3 / 2;
+    }
+
+    & img {
+      display: block;
+      max-width: 100%;
+    }
+  } 
+
+.carousel__item:nth-child(odd) {
+    background-color: lavender;
+}
+
+.is-slide-value-0 .carousel__item {
+  left: 0;
+}
+
+.is-slide-value-1 .carousel__item {
+  left: calc(var(--current-slide-width) * -1);
+}
+
+.is-slide-value-2 .carousel__item {
+  left: calc(var(--current-slide-width) * -2);
+}
+
+.is-slide-value-3 .carousel__item {
+  left: calc(var(--current-slide-width) * -3);
+}
+
+.is-slide-value-4 .carousel__item {
+  left: calc(var(--current-slide-width) * -4);
+}
+
+.carousel__controls {
+  margin: 2rem;
+}
+
+.controls__list {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+}
