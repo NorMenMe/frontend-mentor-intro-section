@@ -8,7 +8,7 @@ const buttonBackward = document.querySelector('.carousel__button--backward');
 let counter = null;
 let slideValue = null;
 
-inputs[0].setAttribute('disabled', '');
+inputs[0].removeAttribute('disabled');
 inputs[0].click();
 
 buttonForward.addEventListener('click', (event) => {
