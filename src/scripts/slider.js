@@ -11,27 +11,7 @@ let slideValue = null;
 inputs[0].removeAttribute('disabled');
 inputs[0].click();
 
-buttonForward.addEventListener('click', (event) => {
-    getSlideValue(listSlider,counter,event);
-});
-
-buttonBackward.addEventListener('click', (event) => {
-    getSlideValue(listSlider,counter,event);
-});
-
-/////////////////////////////////
-
-const getSlideValue = (listSlider,counter,event) => {
-  
-  slideValue = listSlider.classList[1];
-  const lastValue = slideValue[slideValue.length - 1];
-  counter = parseInt(lastValue);
-  
-  const button = event.currentTarget;
-  const isbuttonForward = button.classList.contains('carousel__button--forward');
-  
-  isbuttonForward ? updateCounterForward(counter,button) : updateCounterBackward(counter,button);
-}
+// list of the sliders functions
 
 const updateCounterForward = (counter,button) => {
   if (counter < 4 && counter !== 3) {
@@ -83,6 +63,29 @@ const handlePagination = (counter, inputs,button) => {
     inputs[counter + 1].setAttribute('disabled', '');
   }
 }
+
+const getSlideValue = (listSlider,counter,event) => {
+  
+  slideValue = listSlider.classList[1];
+  const lastValue = slideValue[slideValue.length - 1];
+  counter = parseInt(lastValue);
+  
+  const button = event.currentTarget;
+  const isbuttonForward = button.classList.contains('carousel__button--forward');
+  
+  isbuttonForward ? updateCounterForward(counter,button) : updateCounterBackward(counter,button);
+}
+
+// initialization
+
+buttonForward.addEventListener('click', (event) => {
+    getSlideValue(listSlider,counter,event);
+});
+
+buttonBackward.addEventListener('click', (event) => {
+    getSlideValue(listSlider,counter,event);
+});
+
 
 // persistent transfer of img sizes
 const sliderImgs = document.querySelectorAll('.carousel img');
