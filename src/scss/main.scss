@@ -61,8 +61,11 @@
 .article__copy {
   color: #696969;
   line-height: 1.6;
-  padding: 0 clamp(20px, 24%, 345px);
-  padding: 0 max(20px, min(24%, 340px));
+  padding: 0 clamp(25px, 13%, 105px);
+
+  @media ( min-width: 768px ) {
+    padding: 0 clamp(105px, 23.9%, 345px); 
+  }  
 
   @media ( min-width: 1440px ) {
     font-size: 18px;
