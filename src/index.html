@@ -113,102 +113,104 @@
       </nav>
     </header>
     <main class="main">
-      <figure class="main__hero-image">
-        <picture>
-          <img src="https://picsum.photos/id/28/752/501.jpg" alt="image of person with laptop">
-        </picture>
-      </figure>
-      <article class="main__article article">
-        <h2 class="article__headline">The shorter working week</h2>
-        <p class="article__copy">After testing Four-Day Week, companies say they don’t want to stop. Firms saw productivity hold mostly steady and fewer employees quit.</p>
-        <a href="https://autonomy.work/wp-content/uploads/2023/02/The-results-are-in-The-UKs-four-day-week-pilot.pdf" class="article__button">
-          <span>Go to the study</span>
-        </a>
-      </article>
+      <section class="teaser">
+        <figure class="teaser__hero-image">
+          <picture>
+            <img src="https://picsum.photos/id/28/752/501.jpg" alt="image of person with laptop">
+          </picture>
+        </figure>
+        <article class="teaser__article article">
+          <h2 class="article__headline">The shorter working week</h2>
+          <p class="article__copy">After testing Four-Day Week, companies say they don’t want to stop. Firms saw productivity hold mostly steady and fewer employees quit.</p>
+          <a href="https://autonomy.work/wp-content/uploads/2023/02/The-results-are-in-The-UKs-four-day-week-pilot.pdf" class="article__button">
+            <span>Go to the study</span>
+          </a>
+        </article>
+      </section>
+      <section class="carousel">
+        <h3 class="carousel__heading">
+          <a href="https://github.com/NorMenMe/frontend-mentor-intro-section/blob/main/src/scripts/slider.js">
+            <span>Check this slider written in vanilla.js</span>
+            <span class="sr-only">go to the repository</span>
+          </a>
+        </h3>
+        <div class="carousel__carousel">
+          <button class="carousel__button carousel__button--backward" aria-label="button backward" type="button" disabled>
+            <span class="carousel__arrow carousel__arrow--backward ">
+              <svg viewBox="130 0 17 260" xml:space="preserve" aria-hidden="true">
+                <g style="stroke:none;stroke-width:0;stroke-dasharray:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;fill:none;fill-rule:nonzero;opacity:1"><path d="M65.75 90a3.499 3.499 0 0 0 2.475-5.974L29.2 45 68.225 5.975a3.5 3.5 0 1 0-4.95-4.95l-41.5 41.5a3.499 3.499 0 0 0 0 4.949l41.5 41.5A3.487 3.487 0 0 0 65.75 90z" style="stroke:none;stroke-width:1;stroke-dasharray:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;fill:currentColor;fill-rule:nonzero;opacity:1" transform="matrix(2.81 0 0 2.81 1.407 1.407)"/></g>
+              </svg>
+            </span>
+          </button>
+          <ul class="carousel__slider is-slide-value-0">
+            <li class="carousel__item">
+              <label for="address1">
+                <picture>
+                  <img src="https://picsum.photos/id/27/752/501.jpg" alt="image of person with laptop">
+                </picture>
+              </label>
+            </li>
+            <li class="carousel__item">
+              <label for="address2">
+                <picture>
+                  <img src="https://picsum.photos/id/29/752/501.jpg" alt="image of person with laptop">
+                </picture>
+              </label>
+            </li>
+            <li class="carousel__item">
+              <label for="address3">
+                <picture>
+                  <img src="https://picsum.photos/id/30/752/501.jpg" alt="image of person with laptop">
+                </picture>
+              </label>
+            </li>
+            <li class="carousel__item">
+              <label for="address4">
+                <picture>
+                  <img src="https://picsum.photos/id/31/752/501.jpg" alt="image of person with laptop">
+                </picture>
+              </label>
+            </li>
+            <li class="carousel__item">
+              <label for="address5">
+                <picture>
+                  <img src="https://picsum.photos/id/32/752/501.jpg" alt="image of person with laptop">
+                </picture>
+              </label>
+            </li>
+          </ul>
+          <button class="carousel__button carousel__button--forward" aria-label="button forward" type="button">
+            <span class="carousel__arrow carousel__arrow--forward">
+              <svg viewBox="110 0 17 260" xml:space="preserve" aria-hidden="true">
+                <defs></defs>
+                <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+                  <path d="M 24.25 90 c -0.896 0 -1.792 -0.342 -2.475 -1.025 c -1.367 -1.366 -1.367 -3.583 0 -4.949 L 60.8 45 L 21.775 5.975 c -1.367 -1.367 -1.367 -3.583 0 -4.95 c 1.367 -1.366 3.583 -1.366 4.95 0 l 41.5 41.5 c 1.367 1.366 1.367 3.583 0 4.949 l -41.5 41.5 C 26.042 89.658 25.146 90 24.25 90 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+                </g>
+              </svg>
+            </span>
+          </button>
+        </div>
+        <div class="carousel__controls controls">
+          <ul class="controls__list">
+            <li class="controls__item">
+              <input id="address1" type="radio" data-value="0" disabled>
+            </li>
+            <li class="controls__item">
+              <input id="address2" type="radio" data-value="1" disabled>
+            </li>
+            <li class="controls__item">
+              <input id="address3" type="radio" data-value="2" disabled>
+            </li>
+            <li class="controls__item">
+              <input id="address4" type="radio" data-value="3" disabled>
+            </li>
+            <li class="controls__item">
+              <input id="address5" type="radio" data-value="4" disabled>
+            </li>
+          </ul>
+        </div>
+      </section>
     </main>
-    <section class="carousel">
-      <h3 class="carousel__heading">
-        <a href="https://github.com/NorMenMe/frontend-mentor-intro-section/blob/main/src/scripts/slider.js">
-          <span>Check this slider written in vanilla.js</span>
-          <span class="sr-only">go to the repository</span>
-        </a>
-      </h3>
-      <div class="carousel__carousel">
-        <button class="carousel__button carousel__button--backward" aria-label="button backward" type="button" disabled>
-          <span class="carousel__arrow carousel__arrow--backward ">
-            <svg viewBox="130 0 17 260" xml:space="preserve" aria-hidden="true">
-              <g style="stroke:none;stroke-width:0;stroke-dasharray:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;fill:none;fill-rule:nonzero;opacity:1"><path d="M65.75 90a3.499 3.499 0 0 0 2.475-5.974L29.2 45 68.225 5.975a3.5 3.5 0 1 0-4.95-4.95l-41.5 41.5a3.499 3.499 0 0 0 0 4.949l41.5 41.5A3.487 3.487 0 0 0 65.75 90z" style="stroke:none;stroke-width:1;stroke-dasharray:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;fill:currentColor;fill-rule:nonzero;opacity:1" transform="matrix(2.81 0 0 2.81 1.407 1.407)"/></g>
-            </svg>
-          </span>
-        </button>
-        <ul class="carousel__slider is-slide-value-0">
-          <li class="carousel__item">
-            <label for="address1">
-              <picture>
-                <img src="https://picsum.photos/id/27/752/501.jpg" alt="image of person with laptop">
-              </picture>
-            </label>
-          </li>
-          <li class="carousel__item">
-            <label for="address2">
-              <picture>
-                <img src="https://picsum.photos/id/29/752/501.jpg" alt="image of person with laptop">
-              </picture>
-            </label>
-          </li>
-          <li class="carousel__item">
-            <label for="address3">
-              <picture>
-                <img src="https://picsum.photos/id/30/752/501.jpg" alt="image of person with laptop">
-              </picture>
-            </label>
-          </li>
-          <li class="carousel__item">
-            <label for="address4">
-              <picture>
-                <img src="https://picsum.photos/id/31/752/501.jpg" alt="image of person with laptop">
-              </picture>
-            </label>
-          </li>
-          <li class="carousel__item">
-            <label for="address5">
-              <picture>
-                <img src="https://picsum.photos/id/32/752/501.jpg" alt="image of person with laptop">
-              </picture>
-            </label>
-          </li>
-        </ul>
-        <button class="carousel__button carousel__button--forward" aria-label="button forward" type="button">
-          <span class="carousel__arrow carousel__arrow--forward">
-            <svg viewBox="110 0 17 260" xml:space="preserve" aria-hidden="true">
-              <defs></defs>
-              <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
-                <path d="M 24.25 90 c -0.896 0 -1.792 -0.342 -2.475 -1.025 c -1.367 -1.366 -1.367 -3.583 0 -4.949 L 60.8 45 L 21.775 5.975 c -1.367 -1.367 -1.367 -3.583 0 -4.95 c 1.367 -1.366 3.583 -1.366 4.95 0 l 41.5 41.5 c 1.367 1.366 1.367 3.583 0 4.949 l -41.5 41.5 C 26.042 89.658 25.146 90 24.25 90 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
-              </g>
-            </svg>
-          </span>
-        </button>
-      </div>
-      <div class="carousel__controls controls">
-        <ul class="controls__list">
-          <li class="controls__item">
-            <input id="address1" type="radio" data-value="0" disabled>
-          </li>
-          <li class="controls__item">
-            <input id="address2" type="radio" data-value="1" disabled>
-          </li>
-          <li class="controls__item">
-            <input id="address3" type="radio" data-value="2" disabled>
-          </li>
-          <li class="controls__item">
-            <input id="address4" type="radio" data-value="3" disabled>
-          </li>
-          <li class="controls__item">
-            <input id="address5" type="radio" data-value="4" disabled>
-          </li>
-        </ul>
-      </div>
-    </section>
     <footer class="main__footer footer" role="contentinfo">
       <ul class="footer__list">
         <li class="footer__list-item">
