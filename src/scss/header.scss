@@ -120,6 +120,11 @@
   }
 }
 
+.menu__button--login,
+.menu__button--register {
+  cursor: not-allowed;
+}
+
 
 .menu__item:where(li:nth-child(5),
 li:last-child) .menu__button {
