@@ -6,7 +6,13 @@ button {
 
 // slider styles
 
+.carousel__heading {
+  text-align: center;
+}
+
 .carousel__carousel {
+  max-width: 780px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
   position: relative;
@@ -21,6 +27,9 @@ button {
   transform: translateY(-50%);
   display: inline-flex;
   padding: 10px;
+  scale: 0.9;
+  transform: translateY(0);
+  transition: scale 200ms ease;
 }  
 
 @media ( min-width: 700px ) {
@@ -34,6 +43,12 @@ button {
   }
 }
 
+.carousel__button--backward:hover,
+.carousel__button--forward:hover {
+  scale: 1;
+  transform: translateY(0);
+}
+
 .carousel__button--backward {
   left: 10px;
   z-index: 2;
@@ -44,7 +59,7 @@ button {
 }
 
 .carousel__button[disabled] {
-  pointer-events: none;
+  cursor: not-allowed;
 }  
 
 .carousel__arrow {
@@ -127,4 +142,8 @@ button {
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
+}
+
+.controls__item input[disabled] {
+  cursor: not-allowed;
 }
