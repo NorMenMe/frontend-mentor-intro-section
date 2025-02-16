@@ -4,6 +4,8 @@
 
 
 .teaser {
+  margin-top: 9rem;
+
   @media ( min-width: 1440px ) {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -50,12 +52,7 @@
 }
 
 .article__headline {
-  font-size: 36px;
   margin-bottom: 0;
-
-  @media ( min-width: 1440px ) {
-    font-size: 75px;
-  }  
 }
 
 .article__copy {

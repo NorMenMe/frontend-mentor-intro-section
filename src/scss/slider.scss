@@ -113,26 +113,6 @@ button {
     background-color: lavender;
 }
 
-.is-slide-value-0 .carousel__item {
-  left: 0;
-}
-
-.is-slide-value-1 .carousel__item {
-  left: calc(var(--current-slide-width) * -1);
-}
-
-.is-slide-value-2 .carousel__item {
-  left: calc(var(--current-slide-width) * -2);
-}
-
-.is-slide-value-3 .carousel__item {
-  left: calc(var(--current-slide-width) * -3);
-}
-
-.is-slide-value-4 .carousel__item {
-  left: calc(var(--current-slide-width) * -4);
-}
-
 .carousel__controls {
   margin: 2rem;
 }
