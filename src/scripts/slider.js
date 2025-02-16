@@ -1,54 +1,31 @@
-class CarouselWithLightbox {
+class Slider {
   constructor(args) {
-    this.buttons = document.querySelectorAll('.carousel__button');  
-    this.items = [...document.querySelectorAll('.carousel__item')]; 
-    this.slider = document.querySelector('.carousel__slider'); 
-    this.template = args.template; 
+    this.buttons = document.querySelectorAll('.slider__button');  
+    this.items = [...document.querySelectorAll('.slider__item')]; 
+    this.slider = document.querySelector('.slider__slider'); 
     this.currentIndex = 0; 
-    this.lightbox = null; 
-    this.lightboxImage = null; 
-    this.buttonForward = null; 
-    this.buttonBackward = null;
-    this.lightboxButtonClose = null;
   }
 
-  // Set the image in the lightbox based on the current carousel item
-  setLightboxImage() {
-    console.log("----  setLightboxImage:", setLightboxImage)
-    if (!this.lightbox || !this.lightboxImage) return;
-    const currentItem = this.items[this.currentIndex];
-    const img = currentItem.querySelector('img');
-    this.lightboxImage.src = img.src;
-  }
+  // updateSlideValue
+    // pass the nex index to the string slot of slideValue
 
-  // Highlight the current carousel item
-  showCurrentImage(index) {
-    this.items.forEach((item, itemIndex) => {
-      item.classList.toggle('is-shown', itemIndex === index);
-    });
-  }
+  // updateShowItem
+    // updateSlideValue
 
-  // Update lightbox content and carousel active item
-  updateLightboxContent() {
-    this.setLightboxImage();
-    this.showCurrentImage(this.currentIndex);
-  }
-
-  // Move to a specific index in the carousel
+  // Move to a specific index in the slider
   moveTo(index) {
     this.currentIndex = index;
-    console.log('move to');
     if (this.currentIndex < 0) this.currentIndex = this.items.length - 1; // Wrap around to the last item
     if (this.currentIndex >= this.items.length) this.currentIndex = 0; // Wrap around to the first item
-    this.updateLightboxContent();
+    // updateShowItem
   }
 
-  // Navigate to the next carousel item
+  // Navigate to the next slider item
   next() {
      this.moveTo(this.currentIndex + 1) 
     };
 
-  // Navigate to the previous carousel item
+  // Navigate to the previous slider item
   previous() { 
     this.moveTo(this.currentIndex - 1) 
   };
@@ -85,13 +62,13 @@ class CarouselWithLightbox {
     this.updateLightboxContent();
   }
 
-  // Bind carousel events for navigation and lightbox opening
+  // Bind slider events for navigation and lightbox opening
   bindEvents() {
     this.buttons.forEach((button) => {
       button.addEventListener('click', (event) => {
-        if (button.classList.contains('carousel__button--forward')) {
+        if (button.classList.contains('slider__button--forward')) {
           this.next(); // Handle forward navigation
-        } else if (button.classList.contains('carousel__button--backward')) {
+        } else if (button.classList.contains('slider__button--backward')) {
           this.previous(); // Handle backward navigation
         }
       });
@@ -103,7 +80,14 @@ class CarouselWithLightbox {
     });
   }
 
-  // Initialize the carousel
+  // Highlight the current slider item
+  showCurrentImage(index) {
+    this.items.forEach((item, itemIndex) => {
+      item.classList.toggle('is-shown', itemIndex === index);
+    });
+  }
+
+  // Initialize the slider
   init() {
     if (this.items.length > 0) {
       this.showCurrentImage(this.currentIndex); 
@@ -112,25 +96,22 @@ class CarouselWithLightbox {
   }
 }
 
-// start reading from here: 
+// persistent transfer of img sizes
+const sliderImgs = document.querySelectorAll('.slider img');
 
-const template = `<div class="lightbox">
-  <div class="lightbox__button">
-    <button type="button" class="lightbox__button--close">
-      <span class="sr-only">Close lightbox</span>
-      <svg class="svg-close" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
-        <polygon fill="currentColor" points="0 0 24 24 24 0 0 24"></polygon>
-      </svg>
-    </button>
-  </div>
-  <figure class="lightbox__figure">
-    <img src="" alt="lightbox image" />
-    <div class="lightbox__controls">
-      <button class="lightbox__controls-arrow lightbox__controls-arrow--prev">◀</button>
-      <button class="lightbox__controls-arrow lightbox__controls-arrow--next">▶</button>
-    </div>
-  </figure>
-</div>`;
+sliderImgs && sliderImgs.forEach( image => {
+  setTimeout(() => {
+    const setCurrentSlideWidth = () => {
+      const currentImgWidth = image.clientWidth;
+      const root = document.documentElement;
+      root.style.setProperty('--current-slide-width', `${currentImgWidth}px`);
+    }
+   
+  setCurrentSlideWidth();
+  window.addEventListener('resize', setCurrentSlideWidth)
+  }, 1000);
+})
 
-const carousel = new CarouselWithLightbox({ template });
-carousel.init();
+
+const slider = new Slider();
+slider.init();
