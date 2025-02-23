@@ -1,68 +1,59 @@
 class Slider {
-  constructor(args) {
+  constructor() {
     this.buttons = document.querySelectorAll('.slider__button');  
-    this.items = [...document.querySelectorAll('.slider__item')]; 
+    this.slides = [...document.querySelectorAll('.slider__item')]; 
     this.slider = document.querySelector('.slider__list'); 
     this.currentIndex = 0; 
   }
 
   updateSlideValue() {
-    const previousSlideValue = this.slider.classList[1].slice(0,15);
-    const currentSlideValue = previousSlideValue + this.currentIndex;
-
-    this.slider.classList.remove(previousSlideValue);
-    this.slider.classList.add(currentSlideValue);
+    const previousSlideValue = this.slider.classList[1];
+    const currentSlideValue = previousSlideValue.slice(0, 15) + this.currentIndex;
+    this.slider.classList.replace(previousSlideValue, currentSlideValue);
   }
 
   // Move to a specific index in the slider
   moveTo(updatedIndex) {
     this.currentIndex = updatedIndex;
-    if (this.currentIndex >= this.items.length) this.currentIndex = 0; // Wrap around to the first item
-    if (this.currentIndex < 0) this.currentIndex = this.items.length - 1; // Wrap around to the last item
 
-    this.showCurrentImage()
+    // constraint the value of currentIndex
+    if (this.currentIndex >= this.slides.length) this.currentIndex = 0; // Wrap around to the first item
+    if (this.currentIndex < 0) this.currentIndex = this.slides.length - 1; // Wrap around to the last item
+
+    this.showCurrentImage();
     this.updateSlideValue();
   }
 
-  // Navigate to the next slider item
-  next() {
-     this.moveTo(this.currentIndex + 1) 
-    };
-
   // Navigate to the previous slider item
   previous() { 
-    this.moveTo(this.currentIndex - 1) 
+    this.moveTo(this.currentIndex - 1);
   };
 
+  // Navigate to the next slider item
+  next() {
+    this.moveTo(this.currentIndex + 1);
+   };
 
   // Bind slider events for navigation and lightbox opening
   bindEvents() {
     this.buttons.forEach((button) => {
       button.addEventListener('click', (event) => {
-        if (event.currentTarget.classList.contains('slider__button--forward')) {
-          this.next(); 
-        } else if (event.currentTarget.classList.contains('slider__button--backward')) {
-          this.previous(); 
-        }
+       const isForward = event.currentTarget.classList.contains('slider__button--forward');
+        isForward ? this.next() : this.previous();
       });
-    });
-
-    this.items.forEach((item, index) => {
-      const img = item.querySelector('img');
-      img.addEventListener('click', () => this.openLightbox(index)); // Open lightbox on image click
     });
   }
 
   // Highlight the current slider item
   showCurrentImage() {
-    this.items.forEach((item, itemIndex) => {
-      item.classList.toggle('is-shown', itemIndex === this.currentIndex);
+    this.slides.forEach((slide, slideIndex) => {
+      slide.classList.toggle('is-shown', slideIndex === this.currentIndex);
     });
   }
 
   // Initialize the slider
   init() {
-    if (this.items.length > 0) {
+    if (this.slides.length > 0) {
       this.showCurrentImage(); 
       this.bindEvents(); 
     }
