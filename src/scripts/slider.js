@@ -1,18 +1,19 @@
 class Slider {
   constructor() {
-    this.buttons = document.querySelectorAll('.slider__button');  
-    this.slides = [...document.querySelectorAll('.slider__item')]; 
     this.slider = document.querySelector('.slider__list'); 
+    this.slides = [...this.slider.querySelectorAll('.slider__item')]; 
+    this.buttonsControl = document.querySelectorAll('.slider__button');  
     this.currentIndex = 0; 
   }
 
+  // update the class responsible for the CSS slide effect
   updateSlideValue() {
     const previousSlideValue = this.slider.classList[1];
     const currentSlideValue = previousSlideValue.slice(0, 15) + this.currentIndex;
     this.slider.classList.replace(previousSlideValue, currentSlideValue);
   }
 
-  // Move to a specific index in the slider
+  // update the current index and the shown slide
   moveTo(updatedIndex) {
     this.currentIndex = updatedIndex;
 
@@ -20,7 +21,7 @@ class Slider {
     if (this.currentIndex >= this.slides.length) this.currentIndex = 0; // Wrap around to the first item
     if (this.currentIndex < 0) this.currentIndex = this.slides.length - 1; // Wrap around to the last item
 
-    this.showCurrentImage();
+    this.showCurrentSlide();
     this.updateSlideValue();
   }
 
@@ -34,18 +35,22 @@ class Slider {
     this.moveTo(this.currentIndex + 1);
    };
 
-  // Bind slider events for navigation and lightbox opening
+  // according to the clicked button, call next() or previous()
+  handleOnClick(event) {
+    const isForward = event.currentTarget.classList.contains('slider__button--forward');
+    isForward ? this.next() : this.previous();
+  }
+
+  // Register events
   bindEvents() {
-    this.buttons.forEach((button) => {
-      button.addEventListener('click', (event) => {
-       const isForward = event.currentTarget.classList.contains('slider__button--forward');
-        isForward ? this.next() : this.previous();
-      });
+    if (!this.buttonsControl.length) return;
+    this.buttonsControl.forEach((button) => {
+      button.addEventListener('click', this.handleOnClick.bind(this));
     });
   }
 
-  // Highlight the current slider item
-  showCurrentImage() {
+  // Highlight the current slider item, applying the utility class according to the current index
+  showCurrentSlide() {
     this.slides.forEach((slide, slideIndex) => {
       slide.classList.toggle('is-shown', slideIndex === this.currentIndex);
     });
@@ -53,29 +58,27 @@ class Slider {
 
   // Initialize the slider
   init() {
-    if (this.slides.length > 0) {
-      this.showCurrentImage(); 
-      this.bindEvents(); 
-    }
+    if (!this.slides.length) return;
+    this.showCurrentSlide(); 
+    this.bindEvents(); 
   }
 }
 
-// persistent transfer of img sizes
-const sliderImgs = document.querySelectorAll('.slider img');
+// persistent shipment of the image size for the CSS slide effect
+const sliderImages = document.querySelectorAll('.slider img');
 
-sliderImgs && sliderImgs.forEach( image => {
+sliderImages.length && sliderImages.forEach( image => {
   setTimeout(() => {
     const setCurrentSlideWidth = () => {
-      const currentImgWidth = image.clientWidth;
+      const currentImageWidth = image.clientWidth;
       const root = document.documentElement;
-      root.style.setProperty('--current-slide-width', `${currentImgWidth}px`);
+      root.style.setProperty('--current-slide-width', `${currentImageWidth}px`);
     }
-   
-  setCurrentSlideWidth();
-  window.addEventListener('resize', setCurrentSlideWidth)
+    
+    setCurrentSlideWidth();
+    window.addEventListener('resize', setCurrentSlideWidth)
   }, 1000);
 })
-
 
 const slider = new Slider();
 slider.init();
