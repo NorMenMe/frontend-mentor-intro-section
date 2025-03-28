@@ -52,7 +52,7 @@ class Slider {
   // Highlight the current slider item, applying the utility class according to the current index
   showCurrentSlide() {
     this.slides.forEach((slide, slideIndex) => {
-      slide.classList.toggle('is-shown', slideIndex === this.currentIndex);
+      slide.classList.toggle('is-shown', this.currentIndex === slideIndex );
     });
   }
 
@@ -63,6 +63,11 @@ class Slider {
     this.bindEvents(); 
   }
 }
+
+// init slider
+const slider = new Slider();
+slider.init();
+
 
 // persistent shipment of the image size for the CSS slide effect
 const sliderImages = document.querySelectorAll('.slider img');
@@ -80,5 +85,3 @@ sliderImages.length && sliderImages.forEach( image => {
   }, 1000);
 })
 
-const slider = new Slider();
-slider.init();
