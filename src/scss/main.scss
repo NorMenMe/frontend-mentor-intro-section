@@ -2,6 +2,10 @@
 @use 'base';
 @use 'slider';
 
+.main {
+  display: grid;
+  place-items: center;
+}
 
 .teaser {
   margin-top: 9rem;

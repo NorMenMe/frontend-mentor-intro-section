@@ -1,8 +1,7 @@
 /* header */
 
 .header {
-  display: flex;
-  justify-content: space-between;
+  text-align: end;
   padding: 1.5rem 1rem;
 
   @media ( min-width: 1440px ) {
