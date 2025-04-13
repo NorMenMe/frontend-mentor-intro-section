@@ -219,9 +219,12 @@ button {
 }
 
 .slider__heading {
-  font-family: Helvetica;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   text-align: center;
+}
+.slider__heading span {
+  color: #000;
 }
 
 .slider__container {
