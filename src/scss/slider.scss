@@ -7,9 +7,13 @@ button {
 // slider styles
 
 .slider__heading {
-  font-family: Helvetica;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   text-align: center;
+
+  & span {
+    color: #000;
+  }
 }
 
 .slider__container {
