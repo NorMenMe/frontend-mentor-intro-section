@@ -6,11 +6,13 @@ button {
 
 // slider styles
 
-.carousel__heading {
+.slider__heading {
+  font-family: Helvetica;
+  font-weight: 400;
   text-align: center;
 }
 
-.carousel__carousel {
+.slider__container {
   max-width: 780px;
   margin: 0 auto;
   display: flex;
@@ -18,7 +20,7 @@ button {
   position: relative;
 }
    
-.carousel__button {
+.slider__button {
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
@@ -33,7 +35,7 @@ button {
 }  
 
 @media ( min-width: 700px ) {
-  .carousel__button {
+  .slider__button {
     position: static;
     transform: unset;
     height: fit-content;
@@ -43,26 +45,26 @@ button {
   }
 }
 
-.carousel__button--backward:hover,
-.carousel__button--forward:hover {
+.slider__button--backward:hover,
+.slider__button--forward:hover {
   scale: 1;
   transform: translateY(0);
 }
 
-.carousel__button--backward {
+.slider__button--backward {
   left: 10px;
   z-index: 2;
 }
 
-.carousel__button--forward {
+.slider__button--forward {
   right: 10px;
 }
 
-.carousel__button[disabled] {
+.slider__button[disabled] {
   cursor: not-allowed;
 }  
 
-.carousel__arrow {
+.slider__arrow {
   width: 15px;
   height: 15px;
 
@@ -73,20 +75,20 @@ button {
 }
 
 @media ( min-width: 700px ) {
-  .carousel__arrow {
+  .slider__arrow {
     width: 20px;
     height: 20px;
   }
 }
 
-.carousel__slider {
+.slider__list {
   display: flex;
   max-width: 600px;
   overflow: hidden;
   border-radius: 5px;
 }
 
-.carousel__item {
+.slider__item {
     position: relative;
     flex: 0 0 100%;
     font-size: 30px;
@@ -109,31 +111,31 @@ button {
     }
   } 
 
-.carousel__item:nth-child(odd) {
+.slider__item:nth-child(odd) {
     background-color: lavender;
 }
 
-.is-slide-value-0 .carousel__item {
+.is-slide-value-0 .slider__item {
   left: 0;
 }
 
-.is-slide-value-1 .carousel__item {
+.is-slide-value-1 .slider__item {
   left: calc(var(--current-slide-width) * -1);
 }
 
-.is-slide-value-2 .carousel__item {
+.is-slide-value-2 .slider__item {
   left: calc(var(--current-slide-width) * -2);
 }
 
-.is-slide-value-3 .carousel__item {
+.is-slide-value-3 .slider__item {
   left: calc(var(--current-slide-width) * -3);
 }
 
-.is-slide-value-4 .carousel__item {
+.is-slide-value-4 .slider__item {
   left: calc(var(--current-slide-width) * -4);
 }
 
-.carousel__controls {
+.slider__controls {
   margin: 2rem;
 }
 

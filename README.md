@@ -1,18 +1,15 @@
 
 ## Welcome! 👋
 
-:deciduous_tree: A site with a dropdown menu, on click with css only:  
+:deciduous_tree:  A site with:
+ - a dropdown menu, css only, testing the popover api on chrome
+ - a slider written in vanilla javascript  
+
 
 https://normenme.github.io/frontend-mentor-intro-section/
 
-:fire: Read here my SCSS: 
+:fire: Read here the CSS: 
 
 https://github.com/NorMenMe/frontend-mentor-intro-section/tree/main/src/scss
 
- ![](src/images/preview-mobile.png)
 
- ![](src/images/preview-mobile-collapsed.png)
-
-The content came from this platform:
-
- https://www.frontendmentor.io/challenges

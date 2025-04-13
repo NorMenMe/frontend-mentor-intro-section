@@ -1,104 +1,85 @@
+class Slider {
+  constructor() {
+    this.slider = document.querySelector('.slider__list'); 
+    this.slides = [...this.slider.querySelectorAll('.slider__item')]; 
+    this.buttonsControl = document.querySelectorAll('.slider__button');  
+    this.currentIndex = 0; 
+  }
 
-const listSlider = document.querySelector('.carousel__slider');
-const inputs = document.querySelectorAll('.carousel__controls input');
-const buttons = document.querySelectorAll('.carousel__button');
-const buttonForward = document.querySelector('.carousel__button--forward');
-const buttonBackward = document.querySelector('.carousel__button--backward');
+  // update the class responsible for the CSS slide effect
+  updateSlideValue() {
+    const previousSlideValue = this.slider.classList[1];
+    const currentSlideValue = previousSlideValue.slice(0, 15) + this.currentIndex;
+    this.slider.classList.replace(previousSlideValue, currentSlideValue);
+  }
 
-let counter = null;
-let slideValue = null;
+  // update the current index and the shown slide
+  moveTo(updatedIndex) {
+    this.currentIndex = updatedIndex;
 
-inputs[0].removeAttribute('disabled');
-inputs[0].click();
+    // constraint the value of currentIndex
+    if (this.currentIndex >= this.slides.length) this.currentIndex = 0; // Wrap around to the first item
+    if (this.currentIndex < 0) this.currentIndex = this.slides.length - 1; // Wrap around to the last item
 
-// list of the sliders functions
+    this.showCurrentSlide();
+    this.updateSlideValue();
+  }
 
-const updateCounterForward = (counter,button) => {
-  if (counter < 4 && counter !== 3) {
-    counter +=1;
-  } else if (counter === 3) {
-    counter +=1;
-    button.setAttribute('disabled', '');
+  // Navigate to the previous slider item
+  previous() { 
+    this.moveTo(this.currentIndex - 1);
   };
-  enableButtonBackward(counter);
-  handlePagination(counter, inputs,button);
-  replaceSlideValue(slideValue, counter); 
-};
 
-const updateCounterBackward = (counter, button) => {
-  if (counter !== 1) {
-    counter -= 1;
-  } else {
-    counter -= 1;
-    button.setAttribute('disabled', '');
+  // Navigate to the next slider item
+  next() {
+    this.moveTo(this.currentIndex + 1);
+   };
+
+  // according to the clicked button, call next() or previous()
+  handleOnClick(event) {
+    const isForward = event.currentTarget.classList.contains('slider__button--forward');
+    isForward ? this.next() : this.previous();
   }
-  disableButtonForward(buttonForward, counter);
-  handlePagination(counter, inputs,button);
-  replaceSlideValue(slideValue, counter); 
-};
- 
-const enableButtonBackward = (counter) => {
-   counter > 0 ? buttonBackward.removeAttribute('disabled') : '';
+
+  // Register events
+  bindEvents() {
+    if (!this.buttonsControl.length) return;
+    this.buttonsControl.forEach((button) => {
+      button.addEventListener('click', this.handleOnClick.bind(this));
+    });
   }
- 
-const disableButtonForward = (buttonForward, counter) => {
-  counter !== 4 ? buttonForward.removeAttribute('disabled') : '';
-};
 
-const replaceSlideValue = (slideValue, counter) => {
-    const copySlideValue = slideValue.slice(0,15);
-    const newCurrentSlideValue = copySlideValue + counter;
-    listSlider.classList.remove(slideValue); 
-    listSlider.classList.add(newCurrentSlideValue); 
-}
+  // Highlight the current slider item, applying the utility class according to the current index
+  showCurrentSlide() {
+    this.slides.forEach((slide, slideIndex) => {
+      slide.classList.toggle('is-shown', this.currentIndex === slideIndex );
+    });
+  }
 
-const handlePagination = (counter, inputs,button) => {
-  inputs[counter].removeAttribute('disabled');
-  inputs[counter].click();
-  
-  const isButtonForward = button.classList.contains('carousel__button--forward');
-  if (isButtonForward) {
-    inputs[counter - 1].setAttribute('disabled', '');
-  } else {
-    inputs[counter + 1].setAttribute('disabled', '');
+  // Initialize the slider
+  init() {
+    if (!this.slides.length) return;
+    this.showCurrentSlide(); 
+    this.bindEvents(); 
   }
 }
 
-const getSlideValue = (listSlider,counter,event) => {
-  
-  slideValue = listSlider.classList[1];
-  const lastValue = slideValue[slideValue.length - 1];
-  counter = parseInt(lastValue);
-  
-  const button = event.currentTarget;
-  const isbuttonForward = button.classList.contains('carousel__button--forward');
-  
-  isbuttonForward ? updateCounterForward(counter,button) : updateCounterBackward(counter,button);
-}
-
-// initialization
-
-buttonForward.addEventListener('click', (event) => {
-    getSlideValue(listSlider,counter,event);
-});
-
-buttonBackward.addEventListener('click', (event) => {
-    getSlideValue(listSlider,counter,event);
-});
+// init slider
+const slider = new Slider();
+slider.init();
 
 
-// persistent transfer of img sizes
-const sliderImgs = document.querySelectorAll('.carousel img');
+// persistent shipment of the image size for the CSS slide effect
+const sliderImages = document.querySelectorAll('.slider img');
 
-sliderImgs && sliderImgs.forEach( image => {
-  setTimeout(() => {
-    const setCurrentSlideWidth = () => {
-      const currentImgWidth = image.clientWidth;
-      const root = document.documentElement;
-      root.style.setProperty('--current-slide-width', `${currentImgWidth}px`);
-    }
-   
-  setCurrentSlideWidth();
-  window.addEventListener('resize', setCurrentSlideWidth)
-  }, 1000);
+const setCurrentSlideWidth = () => {
+  sliderImages.length && sliderImages.forEach( image => {
+    const currentImageWidth = image.clientWidth;
+    const root = document.documentElement;
+    root.style.setProperty('--current-slide-width', `${currentImageWidth}px`);
 })
+}
+
+document.addEventListener("DOMContentLoaded", setCurrentSlideWidth);
+window.addEventListener('resize', setCurrentSlideWidth);
+

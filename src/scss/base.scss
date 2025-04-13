@@ -8,6 +8,27 @@ body {
   background-color: #fafafa;
 }
 
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+h3 + p {
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
 ul {
   padding: 0;
   margin: 0;
