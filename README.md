@@ -1,15 +1,14 @@
 
 ## Welcome! 👋
 
-:deciduous_tree:  A site with:
- - a dropdown menu, css only, testing the popover api on chrome
- - a slider written in vanilla javascript  
+ - a slider written in vanilla JavaScript   
+ - a dropdown menu, CSS only, testing the popover api on chrome
 
 
 https://normenme.github.io/frontend-mentor-intro-section/
 
-:fire: Read here the CSS: 
+:fire: Read the JavaScript: 
 
-https://github.com/NorMenMe/frontend-mentor-intro-section/tree/main/src/scss
+https://github.com/NorMenMe/frontend-mentor-intro-section/blob/main/src/scripts/slider.js
 
 
