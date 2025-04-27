@@ -68,7 +68,6 @@ class Slider {
 const slider = new Slider();
 slider.init();
 
-
 // persistent shipment of the image size for the CSS slide effect
 const sliderImages = document.querySelectorAll('.slider img');
 
@@ -80,6 +79,11 @@ const setCurrentSlideWidth = () => {
 })
 }
 
-document.addEventListener("DOMContentLoaded", setCurrentSlideWidth);
-window.addEventListener('resize', setCurrentSlideWidth);
+const handleOnContentLoaded = () => {
+  setTimeout(() => {
+    setCurrentSlideWidth();
+  }, 400);
+}
 
+document.addEventListener("DOMContentLoaded", handleOnContentLoaded);
+window.addEventListener('resize', setCurrentSlideWidth);
