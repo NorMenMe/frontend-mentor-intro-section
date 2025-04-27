@@ -68,18 +68,23 @@ class Slider {
 const slider = new Slider();
 slider.init();
 
-
 // persistent shipment of the image size for the CSS slide effect
-const sliderImages = document.querySelectorAll('.slider img');
 
 const setCurrentSlideWidth = () => {
-  sliderImages.length && sliderImages.forEach( image => {
-    const currentImageWidth = image.clientWidth;
-    const root = document.documentElement;
-    root.style.setProperty('--current-slide-width', `${currentImageWidth}px`);
-})
+  const activeImage = document.querySelector('.is-shown img');
+  if (!activeImage) return;
+
+  const currentImageWidth = activeImage.clientWidth;
+  const root = document.documentElement;
+  root.style.setProperty('--current-slide-width', `${currentImageWidth}px`);
 }
 
-document.addEventListener("DOMContentLoaded", setCurrentSlideWidth);
-window.addEventListener('resize', setCurrentSlideWidth);
+const handleOnContentLoaded = () => {
+  setTimeout(() => {
+    setCurrentSlideWidth();
+  }, 400);
+}
 
+
+document.addEventListener("DOMContentLoaded", handleOnContentLoaded);
+window.addEventListener('resize', setCurrentSlideWidth);
